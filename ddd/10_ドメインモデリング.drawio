@@ -1,14 +1,14 @@
 <mxfile host="65bd71144e">
     <diagram id="3Blbl7ZRACRGzYMYOEXC" name="ページ1">
-        <mxGraphModel dx="901" dy="686" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
+        <mxGraphModel dx="1260" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="118" value="" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;dashed=1;" vertex="1" parent="1">
-                    <mxGeometry x="60" y="1940" width="160" height="100" as="geometry"/>
+                <mxCell id="118" value="" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;dashed=1;" parent="1" vertex="1">
+                    <mxGeometry x="62.5" y="2050" width="160" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="117" value="" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;dashed=1;" vertex="1" parent="1">
-                    <mxGeometry x="250" y="1940" width="390" height="220" as="geometry"/>
+                <mxCell id="117" value="" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;dashed=1;" parent="1" vertex="1">
+                    <mxGeometry x="252.5" y="2050" width="390" height="220" as="geometry"/>
                 </mxCell>
                 <mxCell id="59" value="凡例" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" parent="1" vertex="1">
                     <mxGeometry x="280" y="1720" width="470" height="90" as="geometry"/>
@@ -206,7 +206,7 @@
                     <mxGeometry x="1060" y="1945" width="190" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="61" value="&lt;div style=&quot;&quot;&gt;&lt;/div&gt;&lt;b&gt;&lt;u&gt;進め方&lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;・具体例を書く。&lt;br&gt;&lt;/span&gt;・具体例を参考に、抽出的なモデルを追加する。&lt;br&gt;・抽象的なモデルを更新した場合は、具体例を更新する。&lt;br&gt;・抽象的なモデルの吹き出しに、ルール/制約（検討内容）を追加する。&lt;br&gt;・多重度を書く。&lt;br&gt;・集約の範囲を書く。&lt;br&gt;・日本語と英語の対訳（ユビキタス言語）を書く。&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;b style=&quot;text-decoration-line: underline;&quot;&gt;ポイント&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;・具体例→抽象化の順に進める（イメージが付きやすいため）。&lt;br&gt;・表現を変更した場合、ユースケース図等の他の図にも反映させて統一する（抽象的なモデルから、ユビキタス言語を定義していく事が重要）。&lt;br&gt;・決定事項以外の検討途中の事も書くこと。&lt;br&gt;・集約の範囲は一旦決めるが、実装を進めながら変えることもある。&lt;br&gt;・実装に入る前にモデルの日本語と英語の対訳（ユビキタス言語）を決めておく事で、開発メンバーの認識を合わせておく。&lt;br&gt;・属性に英語の命名を付ける事は任意。表記を固定したい場合のみ記載するなどでもOK。&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;/span&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;spacingLeft=0;" parent="1" vertex="1">
-                    <mxGeometry x="40" y="2350" width="470" height="330" as="geometry"/>
+                    <mxGeometry x="40" y="2430" width="470" height="330" as="geometry"/>
                 </mxCell>
                 <mxCell id="65" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="62" target="94" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -260,11 +260,11 @@
                 <mxCell id="76" value="（面接）&lt;br&gt;3次面接(最終)&lt;br&gt;10/21&lt;br&gt;合格" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
                     <mxGeometry x="1330" y="2495" width="90" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="102" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="79" target="91">
+                <mxCell id="102" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="79" target="91" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="79" value="・入社する場合のステータスは、「選考中→内定→内定承諾→入社」&lt;br&gt;・不合格の場合は、「選考中→不合格」&lt;br&gt;（&lt;font color=&quot;#ff0000&quot;&gt;辞退などのパターンは追々検討&lt;/font&gt;）" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" parent="1" vertex="1">
-                    <mxGeometry x="460" y="2185" width="275" height="70" as="geometry"/>
+                    <mxGeometry x="417.5" y="2295" width="275" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="80" value="ルール/制約&lt;br&gt;（ドメイン知識）" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
                     <mxGeometry x="522" y="1745" width="100" height="45" as="geometry"/>
@@ -275,59 +275,59 @@
                 <mxCell id="82" value="営業" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
                     <mxGeometry x="760" y="2325" width="190" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="89" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;endArrow=none;endFill=0;" parent="1" source="86" target="91" edge="1">
+                <mxCell id="89" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;endArrow=none;endFill=0;startArrow=classic;startFill=1;" parent="1" source="86" target="91" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="110" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#333333;" vertex="1" connectable="0" parent="89">
+                <mxCell id="110" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#333333;" parent="89" vertex="1" connectable="0">
                     <mxGeometry x="-0.7417" y="-2" relative="1" as="geometry">
                         <mxPoint x="-2" y="-13" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="111" value="0..n" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#333333;" vertex="1" connectable="0" parent="89">
+                <mxCell id="111" value="0..n" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#333333;" parent="89" vertex="1" connectable="0">
                     <mxGeometry x="0.6442" y="2" relative="1" as="geometry">
                         <mxPoint y="-9" as="offset"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="86" value="&lt;u style=&quot;font-weight: bold;&quot;&gt;採用ポジション&lt;br&gt;&lt;/u&gt;&lt;b&gt;&lt;u&gt;(Position)&lt;/u&gt;&lt;/b&gt;&lt;br&gt;名前" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="80" y="1960" width="120" height="62.5" as="geometry"/>
+                    <mxGeometry x="82.5" y="2070" width="120" height="62.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="87" value="&lt;u style=&quot;font-weight: bold;&quot;&gt;応募者&lt;br&gt;&lt;/u&gt;&lt;b&gt;&lt;u&gt;(Applicant)&lt;/u&gt;&lt;/b&gt;&lt;br&gt;名前&lt;br&gt;メールアドレス" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="295" y="2080" width="120" height="62.5" as="geometry"/>
+                    <mxGeometry x="297.5" y="2190" width="120" height="62.5" as="geometry"/>
                 </mxCell>
-                <mxCell id="107" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontColor=#FF0000;endArrow=none;endFill=0;" edge="1" parent="1" source="88" target="106">
+                <mxCell id="107" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontColor=#FF0000;endArrow=none;endFill=0;" parent="1" source="88" target="106" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="88" value="&lt;b&gt;&lt;u&gt;面接&lt;br&gt;(Interview)&lt;/u&gt;&lt;/b&gt;&lt;br&gt;面接次数&lt;br&gt;日時&lt;br&gt;面接ステータス" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="500" y="1960" width="120" height="80" as="geometry"/>
+                    <mxGeometry x="502.5" y="2070" width="120" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="92" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontColor=#FF0000;endArrow=none;endFill=0;" parent="1" source="91" target="87" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="115" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#333333;" vertex="1" connectable="0" parent="92">
+                <mxCell id="115" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#333333;" parent="92" vertex="1" connectable="0">
                     <mxGeometry x="-0.6424" y="-1" relative="1" as="geometry">
                         <mxPoint x="6" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="116" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#333333;" vertex="1" connectable="0" parent="92">
+                <mxCell id="116" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#333333;" parent="92" vertex="1" connectable="0">
                     <mxGeometry x="0.5112" relative="1" as="geometry">
                         <mxPoint x="5" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="112" value="" style="edgeStyle=none;html=1;fontColor=#333333;endArrow=none;endFill=0;" edge="1" parent="1" source="91" target="88">
+                <mxCell id="112" value="" style="edgeStyle=none;html=1;fontColor=#333333;endArrow=none;endFill=0;" parent="1" source="91" target="88" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="113" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#333333;" vertex="1" connectable="0" parent="112">
+                <mxCell id="113" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#333333;" parent="112" vertex="1" connectable="0">
                     <mxGeometry x="-0.7395" y="-3" relative="1" as="geometry">
                         <mxPoint y="-13" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="114" value="1..n" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#333333;" vertex="1" connectable="0" parent="112">
+                <mxCell id="114" value="1..n" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#333333;" parent="112" vertex="1" connectable="0">
                     <mxGeometry x="0.6417" y="1" relative="1" as="geometry">
                         <mxPoint y="-10" as="offset"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="91" value="&lt;u style=&quot;font-weight: bold;&quot;&gt;採用選考&lt;br&gt;&lt;/u&gt;&lt;b&gt;&lt;u&gt;(Screening)&lt;/u&gt;&lt;/b&gt;&lt;br&gt;採用選考ステータス&lt;br&gt;経路" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="295" y="1968.75" width="120" height="62.5" as="geometry"/>
+                    <mxGeometry x="297.5" y="2078.75" width="120" height="62.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="95" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontColor=#FF0000;endArrow=none;endFill=0;" parent="1" source="94" target="60" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -347,26 +347,26 @@
                 <mxCell id="98" value="（採用選考）&lt;br&gt;経路: 応募フォーム&lt;br&gt;採用選考ステータス: 内定" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
                     <mxGeometry x="1070" y="2320" width="190" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="104" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontColor=#FF0000;endArrow=none;endFill=0;" edge="1" parent="1" source="103" target="86">
+                <mxCell id="104" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontColor=#FF0000;endArrow=none;endFill=0;" parent="1" source="103" target="86" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="103" value="・募集人数は設定できるようにする。&lt;br&gt;・決定人数は辿れば分かるので、ここでは書かなくてよい。&lt;br&gt;・&lt;font color=&quot;#ff0000&quot;&gt;決定人数と連動して募集停止するかどうか→追々検討&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" vertex="1" parent="1">
-                    <mxGeometry x="37.5" y="2185" width="275" height="100" as="geometry"/>
+                <mxCell id="103" value="・募集人数は設定できるようにする。&lt;br&gt;・決定人数は辿れば分かるので、ここでは書かなくてよい。&lt;br&gt;・&lt;font color=&quot;#ff0000&quot;&gt;決定人数と連動して募集停止するかどうか→追々検討&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="2295" width="275" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="106" value="・面接回数は人によって結構変わる。&lt;br&gt;・最小3回、多くて5回くらい&lt;br&gt;・最終面接は役員が出ます。&lt;br&gt;・&lt;font color=&quot;#ff0000&quot;&gt;カレンダーはGoogle...追々検討&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" vertex="1" parent="1">
-                    <mxGeometry x="430" y="1845" width="275" height="70" as="geometry"/>
+                <mxCell id="106" value="・面接回数は人によって結構変わる。&lt;br&gt;・最小3回、多くて5回くらい&lt;br&gt;・最終面接は役員が出ます。&lt;br&gt;・採用選考ステータスが「選考中」でなければ、面接は追加できない。&lt;br&gt;・2回目以降の面接は、「面接次数」が既存の最大値+1&lt;br&gt;・&lt;font color=&quot;#ff0000&quot;&gt;カレンダーはGoogle...追々検討&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="432.5" y="1910" width="307.5" height="115" as="geometry"/>
                 </mxCell>
-                <mxCell id="119" value="集約の範囲" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;dashed=1;" vertex="1" parent="1">
+                <mxCell id="119" value="集約の範囲" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;dashed=1;" parent="1" vertex="1">
                     <mxGeometry x="640" y="1745" width="90" height="45" as="geometry"/>
                 </mxCell>
-                <mxCell id="121" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="120" target="91">
+                <mxCell id="121" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="120" target="91" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="120" value="・採用選考、応募者という命名のまま進めるかは、もう少し検討の余地がある。" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" vertex="1" parent="1">
-                    <mxGeometry x="147.5" y="1850" width="235" height="50" as="geometry"/>
+                <mxCell id="120" value="・採用選考、応募者という命名のまま進めるかは、もう少し検討の余地がある。" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="1960" width="235" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="123" value="DM-010" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="60" y="1850" width="60" height="30" as="geometry"/>
+                <mxCell id="123" value="DM-010" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="62.5" y="1960" width="60" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
