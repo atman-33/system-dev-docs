@@ -1,5 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\DDDSampleApp.Infrastructure\DDDSampleApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\DDDSampleApp.UseCase\DDDSampleApp.UseCase.csproj" />
+    <ProjectReference Include="..\DDDSampleApp.Domain\DDDSampleApp.Domain.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>

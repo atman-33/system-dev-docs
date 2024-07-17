@@ -20,4 +20,10 @@
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DDDSampleApp.Infrastructure\DDDSampleApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\DDDSampleApp.UseCase\DDDSampleApp.UseCase.csproj" />
+    <ProjectReference Include="..\DDDSampleApp.Domain\DDDSampleApp.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

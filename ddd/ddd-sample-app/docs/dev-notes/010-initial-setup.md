@@ -62,3 +62,29 @@ mkdir DDDSampleAppTest.Tests
 dotnet new mstest -o DDDSampleAppTest.Tests
 dotnet sln DDDSampleApp.sln add DDDSampleAppTest.Tests/DDDSampleAppTest.Tests.csproj
 ```
+
+### プロジェクト間参照を追加
+
+- プレゼンテーション層: インフラ層、ユースケース層、ドメイン層の参照を追加
+
+```powershell
+dotnet add DDDSampleApp.Wpf/DDDSampleApp.Wpf.csproj reference DDDSampleApp.Infrastructure/DDDSampleApp.Infrastructure.csproj DDDSampleApp.UseCase/DDDSampleApp.UseCase.csproj DDDSampleApp.Domain/DDDSampleApp.Domain.csproj
+```
+
+- インフラ層: ユースケース層、ドメイン層の参照を追加
+
+```powershell
+dotnet add DDDSampleApp.Infrastructure/DDDSampleApp.Infrastructure.csproj reference DDDSampleApp.UseCase/DDDSampleApp.UseCase.csproj DDDSampleApp.Domain/DDDSampleApp.Domain.csproj
+```
+
+- ユースケース層: ドメイン層の参照を追加
+
+```powershell
+dotnet add DDDSampleApp.UseCase/DDDSampleApp.UseCase.csproj reference DDDSampleApp.Domain/DDDSampleApp.Domain.csproj
+```
+
+- テスト: インフラ層、ユースケース層、ドメイン層の参照を追加
+
+```powershell
+dotnet add DDDSampleAppTest.Tests/DDDSampleAppTest.Tests.csproj reference DDDSampleApp.Infrastructure/DDDSampleApp.Infrastructure.csproj DDDSampleApp.UseCase/DDDSampleApp.UseCase.csproj DDDSampleApp.Domain/DDDSampleApp.Domain.csproj
+```
