@@ -4,106 +4,109 @@
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="&lt;u style=&quot;&quot;&gt;アーキテクチャ&lt;/u&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+                <mxCell id="2" value="&lt;u style=&quot;&quot;&gt;アーキテクチャ&lt;/u&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
                     <mxGeometry x="40" y="40" width="130" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.275;entryY=-0.054;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="3" target="6">
+                <mxCell id="13" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.275;entryY=-0.054;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="3" target="6" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="25" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="3" target="5">
+                <mxCell id="25" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=classic;endFill=1;" parent="1" source="3" target="5" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="プレゼンテーション層&lt;br&gt;（UI層）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="3" value="プレゼンテーション層&lt;br&gt;（UI層）*1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="358" y="230" width="170" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="オニオンアーキテクチャを採用" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="4" value="オニオンアーキテクチャを採用" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="80" y="80" width="180" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="インフラ層" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="5" value="インフラ層" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="577" y="230" width="190" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="ユースケース層&lt;br&gt;（アプリケーション層）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="6" value="ユースケース層&lt;br&gt;（アプリケーション層）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="358" y="330" width="310" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="ドメイン層" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="8" value="ドメイン層" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="358" y="430" width="410" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.881;entryY=0.048;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="5" target="8">
+                <mxCell id="9" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.881;entryY=0.048;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="5" target="8" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="598" y="540" as="sourcePoint"/>
                         <mxPoint x="721" y="420" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="11" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;exitX=0.2;exitY=1.042;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.828;entryY=0.003;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="5" target="6">
+                <mxCell id="11" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;exitX=0.2;exitY=1.042;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.828;entryY=0.003;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="5" target="6" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="618" y="290" as="sourcePoint"/>
                         <mxPoint x="615" y="332" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="12" value="" style="endArrow=classic;html=1;exitX=0.275;exitY=1.021;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.208;entryY=-0.058;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6" target="8">
+                <mxCell id="12" value="" style="endArrow=classic;html=1;exitX=0.275;exitY=1.021;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.208;entryY=-0.058;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="6" target="8" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="588" y="350" as="sourcePoint"/>
                         <mxPoint x="638" y="300" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="16" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;dashed=1;" edge="1" parent="1" source="15" target="3">
+                <mxCell id="16" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;dashed=1;" parent="1" source="15" target="3" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="・エンドポイント定義&lt;br&gt;・Http Requestで渡された値と&lt;br&gt;　ユースケース層に渡す値の&lt;br&gt;　マッピング&lt;br&gt;・入力値のValidation(一部)&lt;br&gt;・画面(View/ViewModel)" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
-                    <mxGeometry x="80" y="170" width="240" height="90" as="geometry"/>
+                <mxCell id="15" value="・エンドポイント定義&lt;br&gt;・Http Requestで渡された値と&lt;br&gt;　ユースケース層に渡す値の&lt;br&gt;　マッピング&lt;br&gt;・入力値のValidation(一部)&lt;br&gt;・画面(View/ViewModel)&lt;br&gt;・コンバーター&lt;br&gt;　- 画面用の値書式変換" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="140" width="240" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" edge="1" parent="1" source="17" target="6">
+                <mxCell id="18" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" parent="1" source="17" target="6" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="・ユースケースの実現&lt;br&gt;　- ドメインオブジェクトの生成、&lt;br&gt;　&amp;nbsp; 使用、永続化依頼&lt;br&gt;　- ドメインオブジェクトから&lt;br&gt;　&amp;nbsp; プレゼンテーション層に&lt;br&gt;　&amp;nbsp; 渡す値の変換&lt;br&gt;　- 1クラスに1パブリックメソッド推奨&lt;br&gt;・参照用モデル(Dto)&lt;br&gt;　- プレゼンテーション層への&lt;br&gt;　&amp;nbsp; 戻り値クラス&lt;br&gt;・クエリサービス(インターフェース)&lt;br&gt;　- ユースケースに特化した&lt;br&gt;　&amp;nbsp; クエリの型を定義&lt;br&gt;・アダプター(インターフェース)&lt;br&gt;　- 外部API連携。ドメイン知識でない場合" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                <mxCell id="17" value="・ユースケースの実現&lt;br&gt;　- ドメインオブジェクトの生成、&lt;br&gt;　&amp;nbsp; 使用、永続化依頼&lt;br&gt;　- ドメインオブジェクトから&lt;br&gt;　&amp;nbsp; プレゼンテーション層に&lt;br&gt;　&amp;nbsp; 渡す値の変換&lt;br&gt;　- 1クラスに1パブリックメソッド推奨&lt;br&gt;・参照用モデル(Dto)&lt;br&gt;　- プレゼンテーション層への&lt;br&gt;　&amp;nbsp; 戻り値クラス&lt;br&gt;・クエリサービス(インターフェース)&lt;br&gt;　- ユースケースに特化した&lt;br&gt;　&amp;nbsp; クエリの型を定義&lt;br&gt;・アダプター(インターフェース)&lt;br&gt;　- 外部API連携。ドメイン知識でない場合" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
                     <mxGeometry x="80" y="300" width="240" height="230" as="geometry"/>
                 </mxCell>
-                <mxCell id="20" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" edge="1" parent="1" source="19" target="5">
+                <mxCell id="20" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" parent="1" source="19" target="5" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="19" value="・リポジトリ(実装クラス)&lt;br&gt;　- ドメインオブジェクトの&lt;br&gt;　&amp;nbsp; 永続化/検索の実装&lt;br&gt;　- (リポジトリファクトリー)&lt;br&gt;　&amp;nbsp; ※プレゼンテーション層から参照用&lt;br&gt;・クエリサービス(実装クラス)&lt;br&gt;　- インターフェースで定義された検索を&lt;br&gt;　&amp;nbsp; データストアに合わせた方法で実装&lt;br&gt;・ORマッパー&lt;br&gt;　- Active Record型のテーブルと&lt;br&gt;　&amp;nbsp; 対応したクラス&lt;br&gt;・アダプター(実装クラス)&lt;br&gt;　- インターフェースで定義された&lt;br&gt;　&amp;nbsp; 外部APIを実装" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                <mxCell id="19" value="・リポジトリ(実装クラス)&lt;br&gt;　- ドメインオブジェクトの&lt;br&gt;　&amp;nbsp; 永続化/検索の実装&lt;br&gt;　- (リポジトリファクトリー)&lt;br&gt;　&amp;nbsp; ※プレゼンテーション層から参照用&lt;br&gt;・クエリサービス(実装クラス)&lt;br&gt;　- インターフェースで定義された検索を&lt;br&gt;　&amp;nbsp; データストアに合わせた方法で実装&lt;br&gt;・ORマッパー&lt;br&gt;　- Active Record型のテーブルと&lt;br&gt;　&amp;nbsp; 対応したクラス&lt;br&gt;・アダプター(実装クラス)&lt;br&gt;　- インターフェースで定義された&lt;br&gt;　&amp;nbsp; 外部APIを実装" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
                     <mxGeometry x="818" y="130" width="230" height="220" as="geometry"/>
                 </mxCell>
-                <mxCell id="22" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" edge="1" parent="1" source="21" target="8">
+                <mxCell id="22" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" parent="1" source="21" target="8" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="21" value="・ドメインオブジェクト&lt;br&gt;　(エンティティ、値オブジェクト)&lt;br&gt;　- ドメイン知識(ルール/制約)の実現&lt;br&gt;・ドメインサービス&lt;br&gt;・リポジトリ(インターフェース)&lt;br&gt;　- リポジトリの仕様定義&lt;br&gt;・ファーストクラスコレクション&lt;br&gt;・アダプター(インターフェース)&lt;br&gt;　- 外部API連携。ドメイン知識の場合" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                <mxCell id="21" value="・ドメインオブジェクト&lt;br&gt;　(エンティティ、値オブジェクト)&lt;br&gt;　- ドメイン知識(ルール/制約)の実現&lt;br&gt;・ドメインサービス&lt;br&gt;・リポジトリ(インターフェース)&lt;br&gt;　- リポジトリの仕様定義&lt;br&gt;・ファーストクラスコレクション&lt;br&gt;・アダプター(インターフェース)&lt;br&gt;　- 外部API連携。ドメイン知識の場合" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
                     <mxGeometry x="818" y="395" width="230" height="135" as="geometry"/>
                 </mxCell>
-                <mxCell id="27" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;dashed=1;endArrow=none;endFill=0;" edge="1" parent="1" source="26">
+                <mxCell id="27" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;dashed=1;endArrow=none;endFill=0;" parent="1" source="26" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="548" y="255" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="26" value="&amp;lt;DIコンテナを利用しない場合&amp;gt;&lt;br&gt;・リポジトリファクトリー経由で&lt;br&gt;　リポジトリ生成" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                <mxCell id="26" value="&amp;lt;DIコンテナを利用しない場合&amp;gt;&lt;br&gt;・リポジトリファクトリー経由で&lt;br&gt;　リポジトリ生成" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
                     <mxGeometry x="487" y="130" width="200" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="30" value="" style="shape=flexArrow;endArrow=classic;html=1;endWidth=10.857142857142858;endSize=3.5142857142857147;" edge="1" parent="1">
+                <mxCell id="30" value="" style="shape=flexArrow;endArrow=classic;html=1;endWidth=10.857142857142858;endSize=3.5142857142857147;" parent="1" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="469" y="320" as="sourcePoint"/>
                         <mxPoint x="469" y="290" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="31" value="XxxDto" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="31" value="XxxDto" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="484" y="290" width="60" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="36" value="XxxResponse" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="36" value="XxxResponse" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="484" y="190" width="60" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="37" value="" style="shape=flexArrow;endArrow=classic;html=1;endWidth=10.857142857142858;endSize=3.5142857142857147;align=left;" edge="1" parent="1">
+                <mxCell id="37" value="" style="shape=flexArrow;endArrow=classic;html=1;endWidth=10.857142857142858;endSize=3.5142857142857147;align=left;" parent="1" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="469" y="219.9999999999999" as="sourcePoint"/>
                         <mxPoint x="469" y="189.9999999999999" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="38" value="" style="shape=flexArrow;endArrow=classic;html=1;endWidth=10.857142857142858;endSize=3.5142857142857147;" edge="1" parent="1">
+                <mxCell id="38" value="" style="shape=flexArrow;endArrow=classic;html=1;endWidth=10.857142857142858;endSize=3.5142857142857147;" parent="1" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="469" y="420" as="sourcePoint"/>
                         <mxPoint x="469" y="390" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="39" value="ドメインオブジェクト&lt;br&gt;(エンティティ、値オブジェクト)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="39" value="ドメインオブジェクト&lt;br&gt;(エンティティ、値オブジェクト)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="484" y="390" width="194" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="*1: &lt;br&gt;基本はプレゼンテーション層からドメイン層にアクセスしないが、Idの値オブジェクト生成はユースケースに渡すためにドメイン層にアクセスするのは良い。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="358" y="510" width="370" height="70" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
