@@ -1,5 +1,9 @@
 # WPFでBlazor Hybridを構成
 
+## 参考URL
+
+[Windows FormsとWPFでBlazorを使ってみる](https://devlog.mescius.jp/blazor-hybrid-windows-forms-wpf/)
+
 ## ステップ
 
 ### NuGetパッケージを追加
