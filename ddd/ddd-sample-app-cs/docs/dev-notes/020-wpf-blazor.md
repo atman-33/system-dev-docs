@@ -19,7 +19,7 @@ dotnet add package Microsoft.AspNetCore.Components.WebView.Wpf --version 8.0.70
 
 ### プロジェクトファイルを編集
 
-`ddd\ddd-sample-app\DDDSampleApp.Wpf\DDDSampleApp.Wpf.csproj`
+`DDDSampleApp.Wpf\DDDSampleApp.Wpf.csproj`
 
 - `<Project>`を、`Microsoft.NET.Sdk`を`Microsoft.NET.Sdk.Razor`に変更する。
 - `<Propertyroup>`にルート名前空間を設定する。
@@ -46,7 +46,7 @@ dotnet add package Microsoft.AspNetCore.Components.WebView.Wpf --version 8.0.70
 
 `_Imports.razor`をプロジェクトに追加して`Microsoft.AspNetCore.Components.Web`名前空間を追加する。
 
-`ddd\ddd-sample-app\DDDSampleApp.Wpf\_Imports.razor`
+`DDDSampleApp.Wpf\_Imports.razor`
 
 ```r
 @using Microsoft.AspNetCore.Components.Web
@@ -56,7 +56,7 @@ dotnet add package Microsoft.AspNetCore.Components.WebView.Wpf --version 8.0.70
 
 `wwwroot`フォルダをプロジェクトに追加して、さらに`index.html`を追加する。
 
-`ddd\ddd-sample-app\DDDSampleApp.Wpf\wwwroot\index.html`
+`DDDSampleApp.Wpf\wwwroot\index.html`
 
 ```html
 <!DOCTYPE html>
@@ -89,7 +89,7 @@ dotnet add package Microsoft.AspNetCore.Components.WebView.Wpf --version 8.0.70
 
 #### app.css（サンプルのCSS）
 
-`ddd\ddd-sample-app\DDDSampleApp.Wpf\wwwroot\styles\app.css`
+`DDDSampleApp.Wpf\wwwroot\styles\app.css`
 
 ```css
 html, body {
@@ -165,7 +165,7 @@ a, .btn-link {
 
 #### HomePage.razor
 
-`ddd\ddd-sample-app\DDDSampleApp.Wpf\wwwroot\pages\HomePage.razor`
+`DDDSampleApp.Wpf\wwwroot\pages\HomePage.razor`
 
 ```r
 @page "/"
@@ -182,7 +182,7 @@ a, .btn-link {
 
 ### BlazorWebViewコントロールを追加
 
-`ddd\ddd-sample-app\DDDSampleApp.Wpf\MainWindow.xaml`
+`DDDSampleApp.Wpf\MainWindow.xaml`
 
 - Windowタグに属性（blazor, pages）を追加
 
@@ -230,7 +230,7 @@ a, .btn-link {
 
 ### MainWindow.xaml.csにコードを追加
 
-`ddd\ddd-sample-app\DDDSampleApp.Wpf\MainWindow.xaml.cs`
+`DDDSampleApp.Wpf\MainWindow.xaml.cs`
 
 ```cs
 using Microsoft.Extensions.DependencyInjection;
