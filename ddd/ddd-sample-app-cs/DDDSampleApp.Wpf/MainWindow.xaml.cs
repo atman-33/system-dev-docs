@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using DDDSampleApp.Infrastructure.Data;
+using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
 
 namespace DDDSampleApp.Wpf

@@ -4,3 +4,8 @@ obj/
 
 # Visual Studio
 .vs/
+
+# DBファイル
+*.db
+*.db-shm
+*.db-wal

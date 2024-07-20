@@ -1,6 +1,5 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
+﻿using System.Windows;
+using DDDSampleApp.Infrastructure.Data;
 
 namespace DDDSampleApp.Wpf;
 
@@ -9,5 +8,9 @@ namespace DDDSampleApp.Wpf;
 /// </summary>
 public partial class App : Application
 {
+  public App()
+  {
+    DataExtensions.MigrateDbAsync();
+  }
 }
 

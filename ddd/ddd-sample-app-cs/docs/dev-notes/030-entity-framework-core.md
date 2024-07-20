@@ -100,6 +100,17 @@ public class ApplicationContext : DbContext
   }
 
   /// <summary>
+  /// データベースを設定する。
+  /// </summary>
+  /// <param name="optionsBuilder"></param>
+  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+  {
+    // TODO: 後で、データソースは環境変数やConfigファイルから設定するように変更する。
+    optionsBuilder.UseSqlite("Data Source=fake.db");
+    optionsBuilder.UseLazyLoadingProxies();
+  }
+
+  /// <summary>
   /// データベースの構造を定義する。
   /// </summary>
   /// <param name="modelBuilder"></param>
@@ -161,14 +172,14 @@ using Microsoft.EntityFrameworkCore.Design;
 
 namespace DDDSampleApp.Infrastructure.Data;
 
+/// <summary>
+/// dotnet ef database update コマンドで利用する。
+/// </summary>
 public class ApplicationContextFactory : IDesignTimeDbContextFactory<ApplicationContext>
 {
   public ApplicationContext CreateDbContext(string[] args)
   {
     var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
-    optionsBuilder.UseSqlite("Data Source=fake.db");
-    optionsBuilder.UseLazyLoadingProxies();
-
     return new ApplicationContext(optionsBuilder.Options);
   }
 }
@@ -180,3 +191,52 @@ public class ApplicationContextFactory : IDesignTimeDbContextFactory<Application
 cd {インフラ層のプロジェクト}
 dotnet ef migrations add InitialCreate --output-dir Data\Migrations
 ```
+
+### マイグレーション実行クラスを作成
+
+`DDDSampleApp.Infrastructure\Data\DataExtensions.cs`
+
+```cs
+using Microsoft.EntityFrameworkCore;
+
+namespace DDDSampleApp.Infrastructure.Data;
+
+public static class DataExtensions
+{
+  /// <summary>
+  /// データベースをマイグレーション
+  /// </summary>
+  /// <param name="app"></param>
+  public static async void MigrateDbAsync()
+  {
+    using (var dbContext = new ApplicationContext())
+    {
+      await dbContext.Database.MigrateAsync();
+    }
+  }
+}
+```
+
+### App.xaml.cs にマイグレーション実行処理を追加
+
+`DDDSampleApp.Wpf\App.xaml.cs`
+
+```cs
+using System.Windows;
+using DDDSampleApp.Infrastructure.Data;
+
+namespace DDDSampleApp.Wpf;
+
+/// <summary>
+/// Interaction logic for App.xaml
+/// </summary>
+public partial class App : Application
+{
+  public App()
+  {
+    DataExtensions.MigrateDbAsync();
+  }
+}
+```
+
+以上で、アプリ実行後にDBマイグレーションが実行される。
