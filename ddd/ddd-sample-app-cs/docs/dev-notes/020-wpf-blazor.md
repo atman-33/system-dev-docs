@@ -10,7 +10,7 @@
 
 プレゼンテーション層（Wpf）に、`Microsoft.AspNetCore.Components.WebView.Wpf`を追加する。
 
-```powershell
+```sh
 cd {プレゼンテーション層のプロジェクト}
 dotnet add package Microsoft.AspNetCore.Components.WebView.Wpf --version 8.0.70
 ```
@@ -257,6 +257,6 @@ namespace DDDSampleApp.Wpf
 
 以上の実装を完了後、アプリが起動するか確認する。  
 
-```powershell
+```sh
 dotnet run
 ```

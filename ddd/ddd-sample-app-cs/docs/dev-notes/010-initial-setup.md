@@ -18,7 +18,7 @@
 
 ### ソリューション作成
 
-```powershell
+```sh
 dotnet new sln -n DDDSampleApp
 ```
 
@@ -27,7 +27,7 @@ dotnet new sln -n DDDSampleApp
 - WPFプロジェクト作成
 - ソリューションにプロジェクトを追加
 
-```powershell
+```sh
 mkdir DDDSampleApp.Wpf
 dotnet new wpf -o DDDSampleApp.Wpf
 dotnet sln DDDSampleApp.sln add DDDSampleApp.Wpf/DDDSampleApp.Wpf.csproj
@@ -38,7 +38,7 @@ dotnet sln DDDSampleApp.sln add DDDSampleApp.Wpf/DDDSampleApp.Wpf.csproj
 - クラスライブラリ作成
 - ソリューションにプロジェクトを追加
 
-```powershell
+```sh
 mkdir DDDSampleApp.Infrastructure
 dotnet new classlib -o DDDSampleApp.Infrastructure
 dotnet sln DDDSampleApp.sln add DDDSampleApp.Infrastructure/DDDSampleApp.Infrastructure.csproj
@@ -49,7 +49,7 @@ dotnet sln DDDSampleApp.sln add DDDSampleApp.Infrastructure/DDDSampleApp.Infrast
 - クラスライブラリ作成
 - ソリューションにプロジェクトを追加
 
-```powershell
+```sh
 mkdir DDDSampleApp.UseCase
 dotnet new classlib -o DDDSampleApp.UseCase
 dotnet sln DDDSampleApp.sln add DDDSampleApp.UseCase/DDDSampleApp.UseCase.csproj
@@ -60,7 +60,7 @@ dotnet sln DDDSampleApp.sln add DDDSampleApp.UseCase/DDDSampleApp.UseCase.csproj
 - クラスライブラリ作成
 - ソリューションにプロジェクトを追加
 
-```powershell
+```sh
 mkdir DDDSampleApp.Domain
 dotnet new classlib -o DDDSampleApp.Domain
 dotnet sln DDDSampleApp.sln add DDDSampleApp.Domain/DDDSampleApp.Domain.csproj
@@ -71,7 +71,7 @@ dotnet sln DDDSampleApp.sln add DDDSampleApp.Domain/DDDSampleApp.Domain.csproj
 - テストプロジェクト作成
 - ソリューションにプロジェクトを追加
 
-```powershell
+```sh
 mkdir DDDSampleAppTest.Tests
 dotnet new mstest -o DDDSampleAppTest.Tests
 dotnet sln DDDSampleApp.sln add DDDSampleAppTest.Tests/DDDSampleAppTest.Tests.csproj
@@ -81,24 +81,24 @@ dotnet sln DDDSampleApp.sln add DDDSampleAppTest.Tests/DDDSampleAppTest.Tests.cs
 
 - プレゼンテーション層: インフラ層、ユースケース層、ドメイン層の参照を追加
 
-```powershell
+```sh
 dotnet add DDDSampleApp.Wpf/DDDSampleApp.Wpf.csproj reference DDDSampleApp.Infrastructure/DDDSampleApp.Infrastructure.csproj DDDSampleApp.UseCase/DDDSampleApp.UseCase.csproj DDDSampleApp.Domain/DDDSampleApp.Domain.csproj
 ```
 
 - インフラ層: ユースケース層、ドメイン層の参照を追加
 
-```powershell
+```sh
 dotnet add DDDSampleApp.Infrastructure/DDDSampleApp.Infrastructure.csproj reference DDDSampleApp.UseCase/DDDSampleApp.UseCase.csproj DDDSampleApp.Domain/DDDSampleApp.Domain.csproj
 ```
 
 - ユースケース層: ドメイン層の参照を追加
 
-```powershell
+```sh
 dotnet add DDDSampleApp.UseCase/DDDSampleApp.UseCase.csproj reference DDDSampleApp.Domain/DDDSampleApp.Domain.csproj
 ```
 
 - テスト: インフラ層、ユースケース層、ドメイン層の参照を追加
 
-```powershell
+```sh
 dotnet add DDDSampleAppTest.Tests/DDDSampleAppTest.Tests.csproj reference DDDSampleApp.Infrastructure/DDDSampleApp.Infrastructure.csproj DDDSampleApp.UseCase/DDDSampleApp.UseCase.csproj DDDSampleApp.Domain/DDDSampleApp.Domain.csproj
 ```
