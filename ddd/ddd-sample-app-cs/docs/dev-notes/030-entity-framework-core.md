@@ -39,7 +39,7 @@ namespace DDDSampleApp.Infrastructure.Models;
 public class Todo : IHasTimestamps
 {
   [Column("id")]
-  public Guid Id { get; set; }
+  public required string Id { get; set; }
 
   [Column("content")]
   public required string Content { get; set; }
@@ -51,10 +51,10 @@ public class Todo : IHasTimestamps
   public int Status { get; set; }
 
   [Column("member_id")]
-  public Guid MemberId { get; set; }
+  public required string MemberId { get; set; }
 
   [Column("todo_type_id")]
-  public Guid TodoTypeId { get; set; }
+  public required string TodoTypeId { get; set; }
 
   [Column("created_at")]
   public DateTime? CreatedAt { get; set; }
@@ -125,13 +125,6 @@ public class ApplicationContext : DbContext
       .HasOne(t => t.TodoType)
       .WithMany() // NOTE: ナビゲーションプロパティを持たない場合は引数を空にする
       .HasForeignKey(t => t.TodoTypeId);
-
-    // DBでGuidを文字列として扱うための設定
-    modelBuilder.Entity<Member>().Property(e => e.Id).HasConversion<string>();
-    modelBuilder.Entity<Todo>().Property(e => e.Id).HasConversion<string>();
-    modelBuilder.Entity<Todo>().Property(e => e.MemberId).HasConversion<string>();
-    modelBuilder.Entity<Todo>().Property(e => e.TodoTypeId).HasConversion<string>();
-    modelBuilder.Entity<TodoType>().Property(e => e.Id).HasConversion<string>();
   }
 
   /// <summary>
