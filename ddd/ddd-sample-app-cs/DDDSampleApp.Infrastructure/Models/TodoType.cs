@@ -7,7 +7,7 @@ namespace DDDSampleApp.Infrastructure.Models;
 public class TodoType : IHasTimestamps
 {
   [Column("id")]
-  public Guid Id { get; set; }
+  public required string Id { get; set; }
 
   [Column("name")]
   public required string Name { get; set; }

@@ -6,10 +6,13 @@ namespace DDDSampleApp.Infrastructure.Models;
 public class Member : IHasTimestamps
 {
   [Column("id")]
-  public Guid Id { get; set; }
+  public required string Id { get; set; }
 
   [Column("name")]
   public required string Name { get; set; }
+
+  [Column("position")]
+  public required string Position { get; set; }
 
   [Column("created_at")]
   public DateTime? CreatedAt { get; set; }

@@ -24,7 +24,6 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
             modelBuilder.Entity("DDDSampleApp.Infrastructure.Models.Member", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT")
                         .HasColumnName("id");
 
@@ -36,6 +35,11 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("name");
+
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("position");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("TEXT")
@@ -49,7 +53,6 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
             modelBuilder.Entity("DDDSampleApp.Infrastructure.Models.Todo", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT")
                         .HasColumnName("id");
 
@@ -96,7 +99,6 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
             modelBuilder.Entity("DDDSampleApp.Infrastructure.Models.TodoType", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT")
                         .HasColumnName("id");
 

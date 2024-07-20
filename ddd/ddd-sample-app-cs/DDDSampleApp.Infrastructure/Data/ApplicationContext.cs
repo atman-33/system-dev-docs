@@ -48,13 +48,6 @@ public class ApplicationContext : DbContext
       .HasOne(t => t.TodoType)
       .WithMany() // NOTE: ナビゲーションプロパティを持たない場合は引数を空にする
       .HasForeignKey(t => t.TodoTypeId);
-
-    // DBでGuidを文字列として扱うための設定
-    modelBuilder.Entity<Member>().Property(e => e.Id).HasConversion<string>();
-    modelBuilder.Entity<Todo>().Property(e => e.Id).HasConversion<string>();
-    modelBuilder.Entity<Todo>().Property(e => e.MemberId).HasConversion<string>();
-    modelBuilder.Entity<Todo>().Property(e => e.TodoTypeId).HasConversion<string>();
-    modelBuilder.Entity<TodoType>().Property(e => e.Id).HasConversion<string>();
   }
 
   /// <summary>

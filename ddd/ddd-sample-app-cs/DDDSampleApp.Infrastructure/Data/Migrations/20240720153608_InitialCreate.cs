@@ -17,6 +17,7 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
                 {
                     id = table.Column<string>(type: "TEXT", nullable: false),
                     name = table.Column<string>(type: "TEXT", nullable: false),
+                    position = table.Column<string>(type: "TEXT", nullable: false),
                     created_at = table.Column<DateTime>(type: "TEXT", nullable: true),
                     updated_at = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },

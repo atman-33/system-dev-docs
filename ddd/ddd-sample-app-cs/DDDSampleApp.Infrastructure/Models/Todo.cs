@@ -6,7 +6,7 @@ namespace DDDSampleApp.Infrastructure.Models;
 public class Todo : IHasTimestamps
 {
   [Column("id")]
-  public Guid Id { get; set; }
+  public required string Id { get; set; }
 
   [Column("content")]
   public required string Content { get; set; }
@@ -18,10 +18,10 @@ public class Todo : IHasTimestamps
   public int Status { get; set; }
 
   [Column("member_id")]
-  public Guid MemberId { get; set; }
+  public required string MemberId { get; set; }
 
   [Column("todo_type_id")]
-  public Guid TodoTypeId { get; set; }
+  public required string TodoTypeId { get; set; }
 
   [Column("created_at")]
   public DateTime? CreatedAt { get; set; }
