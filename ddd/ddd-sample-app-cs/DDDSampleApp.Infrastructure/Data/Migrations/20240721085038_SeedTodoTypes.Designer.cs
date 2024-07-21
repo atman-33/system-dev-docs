@@ -3,6 +3,7 @@ using System;
 using DDDSampleApp.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DDDSampleApp.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20240721085038_SeedTodoTypes")]
+    partial class SeedTodoTypes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,28 +50,7 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Position")
-                        .IsUnique();
-
                     b.ToTable("members");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "cae93eb1-f9a1-40ae-908a-683662e76e2d",
-                            CreatedAt = new DateTime(2024, 7, 21, 18, 49, 2, 443, DateTimeKind.Local).AddTicks(8566),
-                            Name = "Aさん",
-                            Position = "A",
-                            UpdatedAt = new DateTime(2024, 7, 21, 18, 49, 2, 443, DateTimeKind.Local).AddTicks(8576)
-                        },
-                        new
-                        {
-                            Id = "6c50e648-bdf3-40e4-ab83-d26da5aca141",
-                            CreatedAt = new DateTime(2024, 7, 21, 18, 49, 2, 443, DateTimeKind.Local).AddTicks(8584),
-                            Name = "Bさん",
-                            Position = "B",
-                            UpdatedAt = new DateTime(2024, 7, 21, 18, 49, 2, 443, DateTimeKind.Local).AddTicks(8585)
-                        });
                 });
 
             modelBuilder.Entity("DDDSampleApp.Infrastructure.Models.Todo", b =>
@@ -138,25 +120,18 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Name")
-                        .IsUnique();
-
                     b.ToTable("todo_types");
 
                     b.HasData(
                         new
                         {
-                            Id = "456ad9e2-0972-402a-8552-657b96741e70",
-                            CreatedAt = new DateTime(2024, 7, 21, 18, 49, 2, 443, DateTimeKind.Local).AddTicks(8622),
-                            Name = "プライベート",
-                            UpdatedAt = new DateTime(2024, 7, 21, 18, 49, 2, 443, DateTimeKind.Local).AddTicks(8622)
+                            Id = "1",
+                            Name = "プライベート"
                         },
                         new
                         {
-                            Id = "b53edfe0-fd6a-4b87-94b7-7efda8a90ae3",
-                            CreatedAt = new DateTime(2024, 7, 21, 18, 49, 2, 443, DateTimeKind.Local).AddTicks(8628),
-                            Name = "仕事",
-                            UpdatedAt = new DateTime(2024, 7, 21, 18, 49, 2, 443, DateTimeKind.Local).AddTicks(8629)
+                            Id = "2",
+                            Name = "仕事"
                         });
                 });
 

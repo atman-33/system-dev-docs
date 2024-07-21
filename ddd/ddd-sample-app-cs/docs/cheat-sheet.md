@@ -19,6 +19,12 @@ cd DDDSampleApp.Wpf
 npx tailwindcss -i .\Styles\app.css -o .\wwwroot\styles\app.css --watch
 ```
 
+## ソリューションをクリーン
+
+```sh
+dotnet clean
+```
+
 ## Entity Framework Core コマンド
 
 ### マイグレーションファイル作成

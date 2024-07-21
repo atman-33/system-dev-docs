@@ -4,7 +4,10 @@ namespace DDDSampleApp.Domain.Features.Member.Entities;
 
 public class MemberEntity
 {
-  public MemberEntity(MemberId id, string name, Position position)
+  public MemberEntity(
+    MemberId id,
+    string name,
+    Position position)
   {
     Id = id;
     Name = name;
