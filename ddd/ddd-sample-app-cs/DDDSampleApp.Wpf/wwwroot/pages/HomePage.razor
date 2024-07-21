@@ -1,0 +1,18 @@
+﻿@page "/"
+@using DDDSampleApp.Domain.ValueObjects
+@using DDDSampleApp.Wpf.wwwroot.components
+
+<div class="container p-4">
+  <h2 class="text-xl font-bold">HomePage</h2>
+
+  <div class="m-4 flex gap-8">
+    <TodoContainer position="positonA" />
+    <TodoContainer position="positonB" />
+  </div>
+</div>
+
+@code {
+  private Position positonA = Position.MemberA;
+  private Position positonB = Position.MemberB;
+
+}

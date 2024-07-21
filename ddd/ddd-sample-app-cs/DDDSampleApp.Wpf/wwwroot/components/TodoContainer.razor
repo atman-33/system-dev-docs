@@ -1,0 +1,62 @@
+﻿@using System.Diagnostics
+@using DDDSampleApp.Domain.Features.Member.Entities
+@using DDDSampleApp.Domain.ValueObjects
+@using DDDSampleApp.UseCase
+@using DDDSampleApp.Infrastructure
+
+<div class="border-2 rounded-md p-4">
+  <h3 class="font-bold">@member?.Position.Value: @member?.Name</h3>
+  <form class="flex flex-col gap-4 py-2">
+    <div class="flex gap-8 items-center">
+      <div>
+        <label for="todo" class="text-sm block">Todo</label>
+        <input type="text" id="todo" @bind="todo"
+          class="w-full border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50"
+          placeholder="e.g. 服を買う">
+      </div>
+      <div>
+        <label for="deadline" class="text-sm block">期限</label>
+        <input type="date" id="deadline" />
+      </div>
+    </div>
+    <div>
+      <form class="flex flex-col gap-2">
+        <label for="todo-types" class="text-sm block">タイプ</label>
+        <select id="todo-types"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          <option value="xxx1" selected>プライベート</option>
+          <option value="xxx2">仕事</option>
+        </select>
+      </form>
+    </div>
+    <div>
+      <button type="button"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+        @onclick="HandleAddTodoButtonClick">追加</button>
+    </div>
+  </form>
+</div>
+
+@* <p>todo: @todo</p> *@
+
+@code {
+  [Parameter]
+  public Position? position { get; set; }
+
+  private AbstractFactory? factory;
+  private MemberEntity? member;
+  private string todo = string.Empty;
+  private DateOnly deadline;
+
+  protected override async Task OnInitializedAsync()
+  {
+    factory = AbstractFactory.Create();
+    var memberGetUseCase = new MemberGetUseCase(factory.CreateMemberRepository());
+    member = await memberGetUseCase.Execute(position!);
+  }
+
+  private void HandleAddTodoButtonClick()
+  {
+    Debug.WriteLine($"todo: {todo}");
+  }
+}

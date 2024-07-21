@@ -1,0 +1,16 @@
+﻿<div class="flex flex-col gap-y-2">
+    <h1 class="text-lg font-bold">Counter</h1>
+    <p>Current count: @currentCount</p>
+    <div>
+        <button class=" bg-blue-400 p-2 rounded-md" @onclick="IncrementCount">Click me</button>
+    </div>
+</div>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
