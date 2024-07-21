@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "ms-dotnettools.csdevkit",
-        "alexcvzz.vscode-sqlite"
+        "alexcvzz.vscode-sqlite",
+        "bradlc.vscode-tailwindcss"
     ]
 }

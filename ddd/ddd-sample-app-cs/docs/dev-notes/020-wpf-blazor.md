@@ -67,7 +67,7 @@ dotnet add package Microsoft.AspNetCore.Components.WebView.Wpf --version 8.0.70
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WpfBlazorApp</title>
   <base href="/" />
-  <link href="styles/app.css" rel="stylesheet" />
+  <link href="styles/globals.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -89,7 +89,7 @@ dotnet add package Microsoft.AspNetCore.Components.WebView.Wpf --version 8.0.70
 
 #### app.css（サンプルのCSS）
 
-`DDDSampleApp.Wpf\wwwroot\styles\app.css`
+`DDDSampleApp.Wpf\wwwroot\styles\globals.css`
 
 ```css
 html, body {
