@@ -5,8 +5,8 @@ namespace DDDSampleApp.Domain.Features.Todo.Repositories;
 
 public interface ITodoRepository
 {
-  IList<TodoEntity> FindAll(MemberId id);
-  void Insert(TodoEntity todo);
-  void Update(TodoEntity todo);
-  void Delete(TodoEntity todo);
+  Task<IList<TodoEntity>> FindAllAsync(MemberId id);
+  Task InsertAsync(TodoEntity todo);
+  Task UpdateAsync(TodoEntity todo);
+  Task DeleteAsync(TodoEntity todo);
 }

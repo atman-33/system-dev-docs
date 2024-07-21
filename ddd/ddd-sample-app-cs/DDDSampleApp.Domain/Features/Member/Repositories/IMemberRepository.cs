@@ -5,6 +5,6 @@ namespace DDDSampleApp.Domain.Features.Member.Repositories;
 
 public interface IMemberRepository
 {
-  MemberEntity FindById(MemberId id);
-  void Update(MemberEntity member);
+  Task<MemberEntity> FindByPositionAsync(Position position);
+  Task UpdateAsync(MemberEntity member);
 }
