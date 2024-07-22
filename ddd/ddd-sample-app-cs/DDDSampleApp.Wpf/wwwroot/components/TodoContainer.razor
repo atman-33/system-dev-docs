@@ -43,15 +43,15 @@
   [Parameter]
   public Position? position { get; set; }
 
-  private AbstractFactory? factory;
+  private RepositoryFactory? repositoryFactory;
   private MemberEntity? member;
   private string todo = string.Empty;
   private DateOnly deadline;
 
   protected override async Task OnInitializedAsync()
   {
-    factory = AbstractFactory.Create();
-    var memberGetUseCase = new MemberGetUseCase(factory.CreateMemberRepository());
+    repositoryFactory = RepositoryFactory.Create();
+    var memberGetUseCase = new MemberGetUseCase(repositoryFactory.CreateMemberRepository());
     member = await memberGetUseCase.Execute(position!);
   }
 

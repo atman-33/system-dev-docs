@@ -10,7 +10,7 @@ public static class DataExtensions
   /// <param name="app"></param>
   public static async void MigrateDbAsync()
   {
-    using (var dbContext = new ApplicationContext())
+    using (var dbContext = ApplicationContextFactory.CreateDbContext())
     {
       await dbContext.Database.MigrateAsync();
     }

@@ -5,9 +5,9 @@ using DDDSampleApp.Infrastructure.Repositories.Sqlite;
 
 namespace DDDSampleApp.Infrastructure;
 
-public abstract class AbstractFactory
+public abstract class RepositoryFactory
 {
-  public static AbstractFactory Create()
+  public static RepositoryFactory Create()
   {
     // NOTE: データストアを動的に変更する場合は、ここを変更する。
     return new SqliteFactory();
@@ -17,13 +17,13 @@ public abstract class AbstractFactory
   public abstract ITodoRepository CreateTodoRepository();
 }
 
-public class SqliteFactory : AbstractFactory
+public class SqliteFactory : RepositoryFactory
 {
   private readonly ApplicationContext _dbContext;
 
   public SqliteFactory()
   {
-    _dbContext = new ApplicationContext();
+    _dbContext = ApplicationContextFactory.CreateDbContext();
   }
 
   public override IMemberRepository CreateMemberRepository()

@@ -92,26 +92,11 @@ public class ApplicationContext : DbContext
   public DbSet<Todo> Todos { get; set; }
   public DbSet<TodoType> TodoTypes { get; set; }
 
-  public ApplicationContext()
-  {
-  }
-
   public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
   {
     // NOTE: 状態が変更された際にタイムスタンプを更新するイベントを設定
     ChangeTracker.Tracked += UpdateTimestamps;
     ChangeTracker.StateChanged += UpdateTimestamps;
-  }
-
-  /// <summary>
-  /// データベースを設定する。
-  /// </summary>
-  /// <param name="optionsBuilder"></param>
-  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-  {
-    // TODO: 後で、データソースは環境変数やConfigファイルから設定するように変更する。
-    optionsBuilder.UseSqlite("Data Source=fake.db");
-    optionsBuilder.UseLazyLoadingProxies();
   }
 
   /// <summary>
@@ -208,9 +193,27 @@ namespace DDDSampleApp.Infrastructure.Data;
 /// </summary>
 public class ApplicationContextFactory : IDesignTimeDbContextFactory<ApplicationContext>
 {
+  /// <summary>
+  /// Entity Framework Core Contextを作成する。
+  /// </summary>
+  /// <returns></returns>
+  public static ApplicationContext CreateDbContext()
+  {
+    return new ApplicationContextFactory().CreateDbContext([]);
+  }
+
+  /// <summary>
+  /// Entity Framework Core Contextを作成する。
+  /// （dotnet ef database update コマンドで利用）
+  /// </summary>
+  /// <param name="args"></param>
+  /// <returns></returns>
   public ApplicationContext CreateDbContext(string[] args)
   {
     var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
+    // TODO: 後で、データソースは環境変数やConfigファイルから設定するように変更する。
+    optionsBuilder.UseSqlite("Data Source=fake.db");
+    optionsBuilder.UseLazyLoadingProxies();
     return new ApplicationContext(optionsBuilder.Options);
   }
 }
@@ -240,7 +243,7 @@ public static class DataExtensions
   /// <param name="app"></param>
   public static async void MigrateDbAsync()
   {
-    using (var dbContext = new ApplicationContext())
+    using (var dbContext = ApplicationContextFactory.CreateDbContext())
     {
       await dbContext.Database.MigrateAsync();
     }
