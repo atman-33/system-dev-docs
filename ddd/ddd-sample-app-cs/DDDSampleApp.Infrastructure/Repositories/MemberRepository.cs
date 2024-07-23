@@ -4,7 +4,7 @@ using DDDSampleApp.Domain.ValueObjects;
 using DDDSampleApp.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace DDDSampleApp.Infrastructure.Repositories.Sqlite;
+namespace DDDSampleApp.Infrastructure.Repositories;
 
 public class MemberRepository : IMemberRepository
 {

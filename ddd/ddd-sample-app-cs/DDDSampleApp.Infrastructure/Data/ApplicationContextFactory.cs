@@ -27,7 +27,7 @@ public class ApplicationContextFactory : IDesignTimeDbContextFactory<Application
   {
     var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
     // TODO: 後で、データソースは環境変数やConfigファイルから設定するように変更する。
-    optionsBuilder.UseSqlite("Data Source=fake.db");
+    optionsBuilder.UseSqlite("Data Source=todos.db");
     optionsBuilder.UseLazyLoadingProxies();
     return new ApplicationContext(optionsBuilder.Options);
   }

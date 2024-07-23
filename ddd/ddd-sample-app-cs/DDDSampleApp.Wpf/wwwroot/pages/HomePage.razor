@@ -6,13 +6,13 @@
   <h2 class="text-xl font-bold">HomePage</h2>
 
   <div class="m-4 flex gap-8">
-    <TodoContainer position="positonA" />
-    <TodoContainer position="positonB" />
+    <TodoContainer position="positonLeader" />
+    <TodoContainer position="positonMember" />
   </div>
 </div>
 
 @code {
-  private Position positonA = Position.MemberA;
-  private Position positonB = Position.MemberB;
+  private Position positonLeader = Position.Leader;
+  private Position positonMember = Position.Member;
 
 }
