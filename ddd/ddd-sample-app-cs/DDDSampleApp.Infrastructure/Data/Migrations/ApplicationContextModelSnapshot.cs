@@ -55,19 +55,19 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "cae93eb1-f9a1-40ae-908a-683662e76e2d",
-                            CreatedAt = new DateTime(2024, 7, 21, 18, 49, 2, 443, DateTimeKind.Local).AddTicks(8566),
+                            Id = "89fb5db5-5222-4fac-9ac2-452d81a654f9",
+                            CreatedAt = new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2472),
                             Name = "Aさん",
-                            Position = "A",
-                            UpdatedAt = new DateTime(2024, 7, 21, 18, 49, 2, 443, DateTimeKind.Local).AddTicks(8576)
+                            Position = "リーダー",
+                            UpdatedAt = new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2482)
                         },
                         new
                         {
-                            Id = "6c50e648-bdf3-40e4-ab83-d26da5aca141",
-                            CreatedAt = new DateTime(2024, 7, 21, 18, 49, 2, 443, DateTimeKind.Local).AddTicks(8584),
+                            Id = "73e9bafb-80ea-4829-9e93-eabe999d0b9d",
+                            CreatedAt = new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2497),
                             Name = "Bさん",
-                            Position = "B",
-                            UpdatedAt = new DateTime(2024, 7, 21, 18, 49, 2, 443, DateTimeKind.Local).AddTicks(8585)
+                            Position = "メンバー",
+                            UpdatedAt = new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2498)
                         });
                 });
 
@@ -146,17 +146,17 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "456ad9e2-0972-402a-8552-657b96741e70",
-                            CreatedAt = new DateTime(2024, 7, 21, 18, 49, 2, 443, DateTimeKind.Local).AddTicks(8622),
+                            Id = "931b3142-78b0-4680-a733-fd659d58b7e7",
+                            CreatedAt = new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2532),
                             Name = "プライベート",
-                            UpdatedAt = new DateTime(2024, 7, 21, 18, 49, 2, 443, DateTimeKind.Local).AddTicks(8622)
+                            UpdatedAt = new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2533)
                         },
                         new
                         {
-                            Id = "b53edfe0-fd6a-4b87-94b7-7efda8a90ae3",
-                            CreatedAt = new DateTime(2024, 7, 21, 18, 49, 2, 443, DateTimeKind.Local).AddTicks(8628),
+                            Id = "7347956e-cb5f-4657-8548-be2c1c40bdf2",
+                            CreatedAt = new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2538),
                             Name = "仕事",
-                            UpdatedAt = new DateTime(2024, 7, 21, 18, 49, 2, 443, DateTimeKind.Local).AddTicks(8629)
+                            UpdatedAt = new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2538)
                         });
                 });
 

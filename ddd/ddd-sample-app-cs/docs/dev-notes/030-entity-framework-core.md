@@ -140,8 +140,8 @@ public class ApplicationContext : DbContext
 
     // NOTE: Seed data（初期データ生成）
     modelBuilder.Entity<Member>().HasData(
-      new { Id = Guid.NewGuid().ToString(), Name = "Aさん", Position = "A", CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now },
-      new { Id = Guid.NewGuid().ToString(), Name = "Bさん", Position = "B", CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now }
+      new { Id = Guid.NewGuid().ToString(), Name = "Aさん", Position = "リーダー", CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now },
+      new { Id = Guid.NewGuid().ToString(), Name = "Bさん", Position = "メンバー", CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now }
     );
 
     modelBuilder.Entity<TodoType>().HasData(

@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace DDDSampleApp.Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
@@ -69,6 +71,36 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "members",
+                columns: new[] { "id", "created_at", "name", "position", "updated_at" },
+                values: new object[,]
+                {
+                    { "73e9bafb-80ea-4829-9e93-eabe999d0b9d", new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2497), "Bさん", "メンバー", new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2498) },
+                    { "89fb5db5-5222-4fac-9ac2-452d81a654f9", new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2472), "Aさん", "リーダー", new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2482) }
+                });
+
+            migrationBuilder.InsertData(
+                table: "todo_types",
+                columns: new[] { "id", "created_at", "name", "updated_at" },
+                values: new object[,]
+                {
+                    { "7347956e-cb5f-4657-8548-be2c1c40bdf2", new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2538), "仕事", new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2538) },
+                    { "931b3142-78b0-4680-a733-fd659d58b7e7", new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2532), "プライベート", new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2533) }
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_members_position",
+                table: "members",
+                column: "position",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_todo_types_name",
+                table: "todo_types",
+                column: "name",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_todos_member_id",

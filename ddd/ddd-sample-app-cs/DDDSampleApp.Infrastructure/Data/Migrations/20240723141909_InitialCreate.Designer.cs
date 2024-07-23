@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DDDSampleApp.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20240721085038_SeedTodoTypes")]
-    partial class SeedTodoTypes
+    [Migration("20240723141909_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,7 +50,28 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Position")
+                        .IsUnique();
+
                     b.ToTable("members");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "89fb5db5-5222-4fac-9ac2-452d81a654f9",
+                            CreatedAt = new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2472),
+                            Name = "Aさん",
+                            Position = "リーダー",
+                            UpdatedAt = new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2482)
+                        },
+                        new
+                        {
+                            Id = "73e9bafb-80ea-4829-9e93-eabe999d0b9d",
+                            CreatedAt = new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2497),
+                            Name = "Bさん",
+                            Position = "メンバー",
+                            UpdatedAt = new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2498)
+                        });
                 });
 
             modelBuilder.Entity("DDDSampleApp.Infrastructure.Models.Todo", b =>
@@ -120,18 +141,25 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Name")
+                        .IsUnique();
+
                     b.ToTable("todo_types");
 
                     b.HasData(
                         new
                         {
-                            Id = "1",
-                            Name = "プライベート"
+                            Id = "931b3142-78b0-4680-a733-fd659d58b7e7",
+                            CreatedAt = new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2532),
+                            Name = "プライベート",
+                            UpdatedAt = new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2533)
                         },
                         new
                         {
-                            Id = "2",
-                            Name = "仕事"
+                            Id = "7347956e-cb5f-4657-8548-be2c1c40bdf2",
+                            CreatedAt = new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2538),
+                            Name = "仕事",
+                            UpdatedAt = new DateTime(2024, 7, 23, 23, 19, 9, 618, DateTimeKind.Local).AddTicks(2538)
                         });
                 });
 
