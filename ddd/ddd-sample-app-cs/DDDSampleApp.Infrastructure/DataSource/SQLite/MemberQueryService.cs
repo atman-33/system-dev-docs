@@ -1,4 +1,5 @@
 ﻿using DDDSampleApp.Domain.Features.Member.Entities;
+using DDDSampleApp.Domain.Features.Todo.Entities;
 using DDDSampleApp.Domain.ValueObjects;
 using DDDSampleApp.Infrastructure.Data;
 using DDDSampleApp.UseCase.QueryServices;
@@ -18,10 +19,18 @@ public class MemberQueryService : IMemberQueryService
   public async Task<IList<MemberEntity>> FetchAllAsync()
   {
     return await _dbContext.Members
+        .Include(m => m.Todos)
         .Select(m => new MemberEntity(
             new MemberId(m.Id),
             m.Name,
-            new Position(m.Position)
+            new Position(m.Position),
+            m.Todos
+                .Select(t => TodoEntity.Reconstruct(
+                    new TodoId(t.Id),
+                    new MemberId(t.MemberId),
+                    t.Name,
+                    t.TodoType
+                ))
         ))
         .ToListAsync();
   }

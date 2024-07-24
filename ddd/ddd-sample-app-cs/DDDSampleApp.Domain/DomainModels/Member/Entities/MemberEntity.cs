@@ -1,22 +1,27 @@
-﻿using DDDSampleApp.Domain.ValueObjects;
+﻿using DDDSampleApp.Domain.Features.Todo.Entities;
+using DDDSampleApp.Domain.ValueObjects;
 
 namespace DDDSampleApp.Domain.Features.Member.Entities;
 
 public class MemberEntity
 {
-  public MemberEntity(
+  private MemberEntity(
     MemberId id,
     string name,
-    Position position)
+    Position position,
+    IList<TodoEntity>? todos = null
+  )
   {
     Id = id;
     Name = name;
     Position = position;
+    Todos = todos ?? new List<TodoEntity>();
   }
 
   public MemberId Id { get; private set; }
   public string Name { get; set; }
   public Position Position { get; set; }
+  public IList<TodoEntity> Todos { get; private set; }
 
   /// <summary>
   /// メンバーを再構成する（DBから取得したデータなどから）。
@@ -28,7 +33,8 @@ public class MemberEntity
   public static MemberEntity Reconstruct(
     MemberId id,
     string name,
-    Position position
+    Position position,
+    IList<TodoEntity> todos
   )
   {
     if (!Position.CanCreate(position))
@@ -37,6 +43,6 @@ public class MemberEntity
       throw new Exception($"Invalid position: {position}");
     }
 
-    return new MemberEntity(id, name, position);
+    return new MemberEntity(id, name, position, todos);
   }
 }

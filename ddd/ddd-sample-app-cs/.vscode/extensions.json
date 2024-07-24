@@ -2,6 +2,7 @@
     "recommendations": [
         "ms-dotnettools.csdevkit",
         "alexcvzz.vscode-sqlite",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "formulahendry.dotnet-test-explorer"
     ]
 }

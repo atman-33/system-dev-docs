@@ -1,5 +1,5 @@
-﻿using DDDSampleApp.Domain.Features.Member.Entities;
-using DDDSampleApp.Domain.Features.Member.Repositories;
+﻿using DDDSampleApp.Domain.DomainModels.Member.Repositories;
+using DDDSampleApp.Domain.Features.Member.Entities;
 using DDDSampleApp.Domain.ValueObjects;
 using DDDSampleApp.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
