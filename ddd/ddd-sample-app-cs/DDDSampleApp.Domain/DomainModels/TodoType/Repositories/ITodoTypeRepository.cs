@@ -1,8 +1,8 @@
-﻿using DDDSampleApp.Domain.Features.Member.Entities;
-using DDDSampleApp.Domain.ValueObjects;
+﻿using DDDSampleApp.Domain.DomainModels.TodoType.Entities;
 
 namespace DDDSampleApp.Domain.DomainModels.TodoType.Repositories;
 
 public interface ITodoTypeRepository
 {
+  Task<IList<TodoTypeEntity>> FindAllAsync();
 }

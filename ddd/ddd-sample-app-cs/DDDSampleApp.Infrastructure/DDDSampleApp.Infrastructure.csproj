@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DataSource\" />
-    <Folder Include="DataSource\SQLite\" />
+    <Folder Include="DataSource\QueryServices\" />
+    <Folder Include="DataSource\Repositories\" />
   </ItemGroup>
 
   <PropertyGroup>

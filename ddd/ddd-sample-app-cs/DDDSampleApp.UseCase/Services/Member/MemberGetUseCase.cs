@@ -2,7 +2,7 @@
 using DDDSampleApp.Domain.Features.Member.Entities;
 using DDDSampleApp.Domain.ValueObjects;
 
-namespace DDDSampleApp.UseCase;
+namespace DDDSampleApp.UseCase.Services.Member;
 
 public class MemberGetUseCase
 {

@@ -1,8 +1,9 @@
 ﻿@using System.Diagnostics
 @using DDDSampleApp.Domain.Features.Member.Entities
 @using DDDSampleApp.Domain.ValueObjects
-@using DDDSampleApp.UseCase
+@using DDDSampleApp.Infrastructure.Repositories
 @using DDDSampleApp.Infrastructure
+@using DDDSampleApp.UseCase.Services.Member
 
 <div class="border-2 rounded-md p-4">
   <h3 class="font-bold">@member?.Position.Value: @member?.Name</h3>
@@ -42,16 +43,13 @@
 @code {
   [Parameter]
   public Position? position { get; set; }
-
-  private Factory? factory;
   private MemberEntity? member;
   private string todo = string.Empty;
   private DateTime deadline = DateTime.Now.Date;
 
   protected override async Task OnInitializedAsync()
   {
-    factory = Factory.Create();
-    var memberGetUseCase = new MemberGetUseCase(factory.CreateMemberRepository());
+    var memberGetUseCase = new MemberGetUseCase(new MemberRepository());
     member = await memberGetUseCase.Execute(position!);
   }
 

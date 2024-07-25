@@ -40,9 +40,18 @@ public class MemberEntity
     if (!Position.CanCreate(position))
     {
       // 予め準備しているpositionの値と違う値を設定した場合は例外を投げる
-      throw new Exception($"Invalid position: {position}");
+      throw new InvalidPositionExecption($"Invalid position: {position}");
     }
 
     return new MemberEntity(id, name, position, todos);
+  }
+
+  /// <summary>
+  /// Todoを追加する。
+  /// </summary>
+  /// <param name="todo"></param>
+  public void AddTodo(TodoEntity todo)
+  {
+    Todos.Add(todo);
   }
 }

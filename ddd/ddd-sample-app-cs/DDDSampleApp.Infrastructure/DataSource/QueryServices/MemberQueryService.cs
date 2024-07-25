@@ -11,27 +11,18 @@ public class MemberQueryService : IMemberQueryService
 {
   private readonly ApplicationContext _dbContext;
 
+  public MemberQueryService()
+  : this(ApplicationContextFactory.CreateDbContext())
+  {
+  }
+
   public MemberQueryService(ApplicationContext dbContext)
   {
     _dbContext = dbContext;
   }
 
-  public async Task<IList<MemberEntity>> FetchAllAsync()
+  public Task<IList<MemberEntity>> FetchAllAsync()
   {
-    return await _dbContext.Members
-        .Include(m => m.Todos)
-        .Select(m => new MemberEntity(
-            new MemberId(m.Id),
-            m.Name,
-            new Position(m.Position),
-            m.Todos
-                .Select(t => TodoEntity.Reconstruct(
-                    new TodoId(t.Id),
-                    new MemberId(t.MemberId),
-                    t.Name,
-                    t.TodoType
-                ))
-        ))
-        .ToListAsync();
+    throw new NotImplementedException();
   }
 }

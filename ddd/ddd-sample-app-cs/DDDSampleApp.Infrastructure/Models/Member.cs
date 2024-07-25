@@ -24,5 +24,5 @@ public class Member : IHasTimestamps
   エンティティフレームワーク（Entity Framework）では、
   遅延読み込み（Lazy Loading）や変更追跡プロキシ（Change Tracking Proxy）を使用する際に、
   ナビゲーションプロパティに virtual 修飾子を付ける必要がある。*/
-  public virtual ICollection<Todo>? Todos { get; set; }
+  public virtual ICollection<Todo> Todos { get; set; } = new List<Todo>();
 }

@@ -10,6 +10,11 @@ public class MemberRepository : IMemberRepository
 {
   private readonly ApplicationContext _dbContext;
 
+  public MemberRepository()
+  : this(ApplicationContextFactory.CreateDbContext())
+  {
+  }
+
   public MemberRepository(ApplicationContext dbContext)
   {
     _dbContext = dbContext;
@@ -18,17 +23,15 @@ public class MemberRepository : IMemberRepository
   public async Task<MemberEntity> FindByPositionAsync(Position position)
   {
     var member = await _dbContext.Members
-      .FirstOrDefaultAsync(x => x.Position == position.Value);
+      .Include(m => m.Todos)
+      .FirstOrDefaultAsync(m => m.Position == position.Value);
 
     if (member == null)
     {
       throw new Exception($"Member not found. Position: {position}");
     }
 
-    return new MemberEntity(
-      new MemberId(member.Id),
-      member.Name,
-      new Position(member.Position));
+    return member.ToEntity();
   }
 
   public Task UpdateAsync(MemberEntity member)
