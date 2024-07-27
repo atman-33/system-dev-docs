@@ -6,7 +6,7 @@ namespace DDDSampleApp.UseCase.Services.Member;
 
 public class MemberGetUseCase
 {
-  private IMemberRepository _memberRepository;
+  private readonly IMemberRepository _memberRepository;
 
   public MemberGetUseCase(IMemberRepository memberRepository)
   {

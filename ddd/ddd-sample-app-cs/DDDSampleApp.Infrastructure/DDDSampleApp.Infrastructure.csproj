@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <Folder Include="DataSource\QueryServices\" />
-    <Folder Include="DataSource\Repositories\" />
   </ItemGroup>
 
   <PropertyGroup>

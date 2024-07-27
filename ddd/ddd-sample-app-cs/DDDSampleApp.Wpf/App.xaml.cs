@@ -1,8 +1,11 @@
 ﻿using System.Windows;
 using DDDSampleApp.Domain.DomainModels.Member.Repositories;
+using DDDSampleApp.Domain.DomainModels.TodoType.Repositories;
+using DDDSampleApp.Infrastructure;
 using DDDSampleApp.Infrastructure.Data;
 using DDDSampleApp.Infrastructure.Repositories;
 using DDDSampleApp.UseCase.Services.Member;
+using DDDSampleApp.UseCase.Services.TodoType;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DDDSampleApp.Wpf;
@@ -37,9 +40,12 @@ public partial class App : Application
 
     // 2. リポジトリを追加
     services.AddTransient<IMemberRepository, MemberRepository>();
+    services.AddTransient<ITodoTypeRepository, TodoTypeRepository>();
 
     // 3. ユースケースを追加
     services.AddTransient<MemberGetUseCase>();
+    services.AddTransient<MemberAddTodoUseCase>();
+    services.AddTransient<TodoTypeGetUseCase>();
   }
 }
 

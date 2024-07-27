@@ -67,10 +67,10 @@ public class Todo : IHasTimestamps
   遅延読み込み（Lazy Loading）や変更追跡プロキシ（Change Tracking Proxy）を使用する際に、
   ナビゲーションプロパティに virtual 修飾子を付ける必要がある。*/
   [ForeignKey(nameof(MemberId))]
-  public virtual required Member Member { get; set; }
+  public virtual Member? Member { get; set; }
 
   [ForeignKey(nameof(TodoTypeId))]
-  public virtual required TodoType TodoType { get; set; }
+  public virtual TodoType? TodoType { get; set; }
 }
 ```
 

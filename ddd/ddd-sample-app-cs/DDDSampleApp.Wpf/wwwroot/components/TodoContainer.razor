@@ -1,9 +1,11 @@
 ﻿@using System.Diagnostics
+@using DDDSampleApp.Domain.DomainModels.TodoType.Entities
 @using DDDSampleApp.Domain.Features.Member.Entities
+@using DDDSampleApp.Domain.Features.Todo.Entities
 @using DDDSampleApp.Domain.ValueObjects
 @using DDDSampleApp.Infrastructure.Repositories
-@using DDDSampleApp.Infrastructure
 @using DDDSampleApp.UseCase.Services.Member
+@using DDDSampleApp.UseCase.Services.TodoType
 @using Microsoft.Extensions.DependencyInjection
 
 <div class="border-2 rounded-md p-4">
@@ -11,8 +13,8 @@
   <form class="flex flex-col gap-4 py-2">
     <div class="flex gap-8 items-center">
       <div>
-        <label for="todo" class="text-sm block">Todo</label>
-        <input type="text" id="todo" @bind="todo"
+        <label for="todoContent" class="text-sm block">Todo</label>
+        <input type="text" id="todoContent" @bind="todoContent"
           class="w-full border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50"
           placeholder="e.g. 服を買う">
       </div>
@@ -22,40 +24,56 @@
       </div>
     </div>
     <div>
-      <form class="flex flex-col gap-2">
+      <div class="flex flex-col gap-2">
         <label for="todo-types" class="text-sm block">タイプ</label>
         <select id="todo-types"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-          <option value="xxx1" selected>プライベート</option>
-          <option value="xxx2">仕事</option>
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                @bind=selectedTodoTypeId>
+          @foreach(var todoType in todoTypes)
+          {
+            <option value="@todoType.Id.Value" selected>@todoType.Name</option>
+          }
         </select>
-      </form>
+      </div>
     </div>
     <div>
       <button type="button"
         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
         @onclick="HandleAddTodoButtonClick">追加</button>
     </div>
+
+    <p>selectedTodoTypeId: @selectedTodoTypeId</p>
+    @* <p>todo: @todo</p> *@
+
   </form>
 </div>
 
-@* <p>todo: @todo</p> *@
 
 @code {
   [Parameter]
-  public Position? position { get; set; }
+  public Position? Position { get; set; }
+
   private MemberEntity? member;
-  private string todo = string.Empty;
+  private string todoContent = string.Empty;
   private DateTime deadline = DateTime.Now.Date;
+  private List<TodoTypeEntity> todoTypes = new List<TodoTypeEntity>();
+  private string selectedTodoTypeId = string.Empty;
 
   protected override async Task OnInitializedAsync()
   {
     var memberGetUseCase = App.ServiceProvider.GetRequiredService<MemberGetUseCase>();
-    member = await memberGetUseCase.Execute(position!);
+    member = await memberGetUseCase.Execute(Position!);
+
+    var todoTypeGetUseCase = App.ServiceProvider.GetRequiredService<TodoTypeGetUseCase>();
+    todoTypes = (List<TodoTypeEntity>)(await todoTypeGetUseCase.Execute());
+    // TODO: プライベートが初期値になるよう修正
+    selectedTodoTypeId = todoTypes[0].Id.Value;
   }
 
   private void HandleAddTodoButtonClick()
   {
-    Debug.WriteLine($"todo: {todo}");
+    // var newTodo = new TodoEntity(todoContent, deadline, todoTypeId)
+    var memberGetUseCase = App.ServiceProvider.GetRequiredService<MemberAddTodoUseCase>();
+    selectedTodoTypeId = "74419766-ad87-4baa-a35e-ae06298c3ed9";
   }
 }
