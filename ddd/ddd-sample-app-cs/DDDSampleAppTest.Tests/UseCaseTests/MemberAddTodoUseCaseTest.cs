@@ -18,8 +18,8 @@ public class MemberAddTodoUseCaseTest
       Position.Leader,
       new List<TodoEntity>());
 
-    var useCase = new MemberAddTodoUseCase(member);
-    useCase.Execute(todo);
+    var useCase = new MemberAddTodoUseCase();
+    useCase.Execute(member, todo);
 
     Assert.AreEqual(1, member.Todos.Count);
   }

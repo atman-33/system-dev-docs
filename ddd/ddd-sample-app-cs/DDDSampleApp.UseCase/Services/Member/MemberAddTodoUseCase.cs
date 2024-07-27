@@ -5,15 +5,12 @@ namespace DDDSampleApp.UseCase;
 
 public class MemberAddTodoUseCase
 {
-  private MemberEntity _member;
-
-  public MemberAddTodoUseCase(MemberEntity member)
+  public MemberAddTodoUseCase()
   {
-    _member = member;
   }
 
-  public void Execute(TodoEntity todo)
+  public void Execute(MemberEntity member, TodoEntity todo)
   {
-    _member.AddTodo(todo);
+    member.AddTodo(todo);
   }
 }

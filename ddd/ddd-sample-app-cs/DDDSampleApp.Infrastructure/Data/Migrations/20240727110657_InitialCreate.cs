@@ -77,8 +77,8 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
                 columns: new[] { "id", "created_at", "name", "position", "updated_at" },
                 values: new object[,]
                 {
-                    { "63f1d2f1-12a6-45c2-b48e-fa4a81b6484e", new DateTime(2024, 7, 25, 23, 0, 44, 930, DateTimeKind.Local).AddTicks(962), "Bさん", "メンバー", new DateTime(2024, 7, 25, 23, 0, 44, 930, DateTimeKind.Local).AddTicks(962) },
-                    { "ca9e97df-e931-49cb-93f1-926f96902c02", new DateTime(2024, 7, 25, 23, 0, 44, 930, DateTimeKind.Local).AddTicks(936), "Aさん", "リーダー", new DateTime(2024, 7, 25, 23, 0, 44, 930, DateTimeKind.Local).AddTicks(956) }
+                    { "7531c3df-bfb3-42d1-8eed-5667c890fe44", new DateTime(2024, 7, 27, 20, 6, 56, 887, DateTimeKind.Local).AddTicks(2376), "Aさん", "リーダー", new DateTime(2024, 7, 27, 20, 6, 56, 887, DateTimeKind.Local).AddTicks(2387) },
+                    { "77cebb4f-a8dd-421c-8a08-11eddfefae3f", new DateTime(2024, 7, 27, 20, 6, 56, 887, DateTimeKind.Local).AddTicks(2392), "Bさん", "メンバー", new DateTime(2024, 7, 27, 20, 6, 56, 887, DateTimeKind.Local).AddTicks(2392) }
                 });
 
             migrationBuilder.InsertData(
@@ -86,8 +86,8 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
                 columns: new[] { "id", "created_at", "name", "updated_at" },
                 values: new object[,]
                 {
-                    { "2624aa01-fc01-451e-9022-7725105f9689", new DateTime(2024, 7, 25, 23, 0, 44, 930, DateTimeKind.Local).AddTicks(1132), "プライベート", new DateTime(2024, 7, 25, 23, 0, 44, 930, DateTimeKind.Local).AddTicks(1134) },
-                    { "38226631-23b7-4b80-ac5d-e5aad89b11c4", new DateTime(2024, 7, 25, 23, 0, 44, 930, DateTimeKind.Local).AddTicks(1138), "仕事", new DateTime(2024, 7, 25, 23, 0, 44, 930, DateTimeKind.Local).AddTicks(1139) }
+                    { "74419766-ad87-4baa-a35e-ae06298c3ed9", new DateTime(2024, 7, 27, 20, 6, 56, 887, DateTimeKind.Local).AddTicks(2427), "プライベート", new DateTime(2024, 7, 27, 20, 6, 56, 887, DateTimeKind.Local).AddTicks(2427) },
+                    { "f338175a-544b-4b01-91c1-da79539ad06c", new DateTime(2024, 7, 27, 20, 6, 56, 887, DateTimeKind.Local).AddTicks(2442), "仕事", new DateTime(2024, 7, 27, 20, 6, 56, 887, DateTimeKind.Local).AddTicks(2442) }
                 });
 
             migrationBuilder.CreateIndex(

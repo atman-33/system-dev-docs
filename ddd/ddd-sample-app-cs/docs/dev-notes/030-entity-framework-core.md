@@ -92,11 +92,28 @@ public class ApplicationContext : DbContext
   public DbSet<Todo> Todos { get; set; }
   public DbSet<TodoType> TodoTypes { get; set; }
 
+  public ApplicationContext() : this(ApplicationContext.GetDefaultOptions())
+  {
+  }
+
   public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
   {
     // NOTE: 状態が変更された際にタイムスタンプを更新するイベントを設定
     ChangeTracker.Tracked += UpdateTimestamps;
     ChangeTracker.StateChanged += UpdateTimestamps;
+  }
+
+  /// <summary>
+  /// DbContextOptionsを取得する。
+  /// </summary>
+  /// <returns></returns>
+  public static DbContextOptions<ApplicationContext> GetDefaultOptions()
+  {
+    var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
+    // TODO: 後で、データソースは環境変数やConfigファイルから設定するように変更する。
+    optionsBuilder.UseSqlite("Data Source=todos.db");
+    optionsBuilder.UseLazyLoadingProxies();
+    return optionsBuilder.Options;
   }
 
   /// <summary>
@@ -183,7 +200,6 @@ public class ApplicationContext : DbContext
 `DDDSampleApp.Infrastructure\Data\ApplicationContextFactory.cs`
 
 ```cs
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
 namespace DDDSampleApp.Infrastructure.Data;
@@ -195,26 +211,13 @@ public class ApplicationContextFactory : IDesignTimeDbContextFactory<Application
 {
   /// <summary>
   /// Entity Framework Core Contextを作成する。
-  /// </summary>
-  /// <returns></returns>
-  public static ApplicationContext CreateDbContext()
-  {
-    return new ApplicationContextFactory().CreateDbContext([]);
-  }
-
-  /// <summary>
-  /// Entity Framework Core Contextを作成する。
   /// （dotnet ef database update コマンドで利用）
   /// </summary>
   /// <param name="args"></param>
   /// <returns></returns>
   public ApplicationContext CreateDbContext(string[] args)
   {
-    var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
-    // TODO: 後で、データソースは環境変数やConfigファイルから設定するように変更する。
-    optionsBuilder.UseSqlite("Data Source=fake.db");
-    optionsBuilder.UseLazyLoadingProxies();
-    return new ApplicationContext(optionsBuilder.Options);
+    return new ApplicationContext(ApplicationContext.GetDefaultOptions());
   }
 }
 ```
@@ -241,9 +244,9 @@ public static class DataExtensions
   /// データベースをマイグレーション
   /// </summary>
   /// <param name="app"></param>
-  public static async void MigrateDbAsync()
+  public static async void MigrateDbAsync(DbContextOptions<ApplicationContext> options)
   {
-    using (var dbContext = ApplicationContextFactory.CreateDbContext())
+    using (var dbContext = new ApplicationContext(options))
     {
       await dbContext.Database.MigrateAsync();
     }
@@ -268,7 +271,8 @@ public partial class App : Application
 {
   public App()
   {
-    DataExtensions.MigrateDbAsync();
+    // DBマイグレーション実行
+    DataExtensions.MigrateDbAsync(ApplicationContext.GetDefaultOptions());
   }
 }
 ```

@@ -10,11 +10,6 @@ public class MemberRepository : IMemberRepository
 {
   private readonly ApplicationContext _dbContext;
 
-  public MemberRepository()
-  : this(ApplicationContextFactory.CreateDbContext())
-  {
-  }
-
   public MemberRepository(ApplicationContext dbContext)
   {
     _dbContext = dbContext;

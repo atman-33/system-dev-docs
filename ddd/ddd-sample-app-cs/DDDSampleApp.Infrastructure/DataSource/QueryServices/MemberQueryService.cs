@@ -11,11 +11,6 @@ public class MemberQueryService : IMemberQueryService
 {
   private readonly ApplicationContext _dbContext;
 
-  public MemberQueryService()
-  : this(ApplicationContextFactory.CreateDbContext())
-  {
-  }
-
   public MemberQueryService(ApplicationContext dbContext)
   {
     _dbContext = dbContext;

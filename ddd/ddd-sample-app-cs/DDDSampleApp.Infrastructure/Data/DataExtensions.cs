@@ -8,9 +8,9 @@ public static class DataExtensions
   /// データベースをマイグレーション
   /// </summary>
   /// <param name="app"></param>
-  public static async void MigrateDbAsync()
+  public static async void MigrateDbAsync(DbContextOptions<ApplicationContext> options)
   {
-    using (var dbContext = ApplicationContextFactory.CreateDbContext())
+    using (var dbContext = new ApplicationContext(options))
     {
       await dbContext.Database.MigrateAsync();
     }

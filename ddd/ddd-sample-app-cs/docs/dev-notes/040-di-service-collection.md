@@ -1,4 +1,13 @@
-﻿using System.Windows;
+# DIコンテナ（サービスコレクション）利用方法
+
+# ステップ
+
+## コンテナ生成
+
+`DDDSampleApp.Wpf\App.xaml.cs`
+
+```cs
+using System.Windows;
 using DDDSampleApp.Domain.DomainModels.Member.Repositories;
 using DDDSampleApp.Infrastructure.Data;
 using DDDSampleApp.Infrastructure.Repositories;
@@ -33,7 +42,7 @@ public partial class App : Application
   private void ConfigureServices(ServiceCollection services)
   {
     // 1. DBコンテキストを追加
-    services.AddTransient<ApplicationContext>();
+    services.AddDbContext<ApplicationContext>(options => ApplicationContext.GetDefaultOptions());
 
     // 2. リポジトリを追加
     services.AddTransient<IMemberRepository, MemberRepository>();
@@ -42,4 +51,13 @@ public partial class App : Application
     services.AddTransient<MemberGetUseCase>();
   }
 }
+```
 
+## インスタンス利用方法
+
+e.g.  
+
+```cs
+var memberGetUseCase = App.ServiceProvider.GetRequiredService<MemberGetUseCase>();
+member = await memberGetUseCase.Execute(position!);
+```

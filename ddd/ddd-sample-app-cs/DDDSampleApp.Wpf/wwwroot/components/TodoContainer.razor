@@ -4,6 +4,7 @@
 @using DDDSampleApp.Infrastructure.Repositories
 @using DDDSampleApp.Infrastructure
 @using DDDSampleApp.UseCase.Services.Member
+@using Microsoft.Extensions.DependencyInjection
 
 <div class="border-2 rounded-md p-4">
   <h3 class="font-bold">@member?.Position.Value: @member?.Name</h3>
@@ -49,7 +50,7 @@
 
   protected override async Task OnInitializedAsync()
   {
-    var memberGetUseCase = new MemberGetUseCase(new MemberRepository());
+    var memberGetUseCase = App.ServiceProvider.GetRequiredService<MemberGetUseCase>();
     member = await memberGetUseCase.Execute(position!);
   }
 

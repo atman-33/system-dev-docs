@@ -11,11 +11,28 @@ public class ApplicationContext : DbContext
   public DbSet<Todo> Todos { get; set; }
   public DbSet<TodoType> TodoTypes { get; set; }
 
+  public ApplicationContext() : this(ApplicationContext.GetDefaultOptions())
+  {
+  }
+
   public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
   {
     // NOTE: 状態が変更された際にタイムスタンプを更新するイベントを設定
     ChangeTracker.Tracked += UpdateTimestamps;
     ChangeTracker.StateChanged += UpdateTimestamps;
+  }
+
+  /// <summary>
+  /// DbContextOptionsを取得する。
+  /// </summary>
+  /// <returns></returns>
+  public static DbContextOptions<ApplicationContext> GetDefaultOptions()
+  {
+    var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
+    // TODO: 後で、データソースは環境変数やConfigファイルから設定するように変更する。
+    optionsBuilder.UseSqlite("Data Source=todos.db");
+    optionsBuilder.UseLazyLoadingProxies();
+    return optionsBuilder.Options;
   }
 
   /// <summary>
