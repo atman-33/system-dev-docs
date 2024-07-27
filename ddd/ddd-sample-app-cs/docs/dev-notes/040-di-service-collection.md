@@ -1,8 +1,8 @@
 # DIコンテナ（サービスコレクション）利用方法
 
-# ステップ
+## ステップ
 
-## コンテナ生成
+### コンテナ生成
 
 `DDDSampleApp.Wpf\App.xaml.cs`
 
@@ -53,7 +53,7 @@ public partial class App : Application
 }
 ```
 
-## インスタンス利用方法
+### インスタンス利用方法
 
 e.g.  
 
