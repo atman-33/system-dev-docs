@@ -1,6 +1,7 @@
 ﻿using DDDSampleApp.Domain.Features.Todo.Entities;
 using DDDSampleApp.Domain.ValueObjects;
 using DDDSampleApp.Infrastructure.Models;
+using DDDSampleApp.UseCase;
 
 namespace DDDSampleApp.Infrastructure.Mapping;
 
@@ -19,4 +20,24 @@ public static class TodoMapping
     };
   }
 
+  public static TodoEntity ToEntity(this Todo todo)
+  {
+    return new TodoEntity(todo.Content, todo.Deadline, new TodoTypeId(todo.TodoTypeId));
+  }
+
+  public static TodoDto ToDto(this Todo todo)
+  {
+    if (todo.TodoType is null)
+    {
+      throw new Exception("Todo.TodoType に null が格納されています!");
+    }
+
+    return new TodoDto(
+      Todo: todo.ToEntity(),
+      Content: todo.Content,
+      DeadLine: todo.Deadline,
+      TodoTypeName: todo.TodoType.Name
+    );
+
+  }
 }

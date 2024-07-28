@@ -19,7 +19,7 @@ public class TodoTypeGetUseCaseTest
 
     var todoTypeRepositoryMock = new Mock<ITodoTypeRepository>();
     todoTypeRepositoryMock
-      .Setup(x => x.FindAllAsync())
+      .Setup(x => x.FetchAllAsync())
       .ReturnsAsync(todoTypes);
 
     var useCase = new TodoTypeGetUseCase(todoTypeRepositoryMock.Object);

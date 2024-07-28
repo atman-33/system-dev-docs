@@ -1,7 +1,7 @@
-﻿using DDDSampleApp.Domain.Features.Member.Entities;
-using DDDSampleApp.Domain.Features.Todo.Entities;
-using DDDSampleApp.Domain.ValueObjects;
+﻿using DDDSampleApp.Domain.ValueObjects;
 using DDDSampleApp.Infrastructure.Data;
+using DDDSampleApp.Infrastructure.Mapping;
+using DDDSampleApp.UseCase;
 using DDDSampleApp.UseCase.QueryServices;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,8 +16,12 @@ public class MemberQueryService : IMemberQueryService
     _dbContext = dbContext;
   }
 
-  public Task<IList<MemberEntity>> FetchAllAsync()
+  public async Task<IList<TodoDto>> FetchAllAsync(MemberId memberId)
   {
-    throw new NotImplementedException();
+    return await _dbContext.Todos
+      .Include(t => t.TodoType)
+      .Where(t => t.MemberId == memberId.Value)
+      .Select(t => t.ToDto())
+      .ToListAsync();
   }
 }

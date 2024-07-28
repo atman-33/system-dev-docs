@@ -23,7 +23,7 @@ public class MemberGetUseCaseTest
     var memberRepositoryMock = new Mock<IMemberRepository>();
 
     memberRepositoryMock
-      .Setup(x => x.FindByPositionAsync(Position.Leader))
+      .Setup(x => x.FetchByPositionAsync(Position.Leader))
       .ReturnsAsync(member);
 
     var useCase = new MemberGetUseCase(memberRepositoryMock.Object);

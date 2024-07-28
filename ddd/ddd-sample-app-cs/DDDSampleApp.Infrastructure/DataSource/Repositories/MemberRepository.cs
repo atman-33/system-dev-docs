@@ -16,7 +16,7 @@ public class MemberRepository : IMemberRepository
     _dbContext = dbContext;
   }
 
-  public async Task<MemberEntity> FindByPositionAsync(Position position)
+  public async Task<MemberEntity> FetchByPositionAsync(Position position)
   {
     var member = await _dbContext.Members
       .Include(m => m.Todos)

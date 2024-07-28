@@ -15,7 +15,7 @@ public class TodoTypeRepository : ITodoTypeRepository
     _dbContext = dbContext;
   }
 
-  public async Task<IList<TodoTypeEntity>> FindAllAsync()
+  public async Task<IList<TodoTypeEntity>> FetchAllAsync()
   {
     var todoTypes = await _dbContext.TodoTypes.ToListAsync();
     return todoTypes.Select(t => t.ToEntity()).ToList();

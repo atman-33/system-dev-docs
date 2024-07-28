@@ -1,4 +1,5 @@
 ﻿@using DDDSampleApp.Domain.Features.Todo.Entities;
+@using DDDSampleApp.Wpf.Utils;
 
 <table class="table-auto">
   <thead>
@@ -13,7 +14,7 @@
     {
       <tr>
         <td>@todo.Content</td>
-        <td>@todo.Deadline.ToString()</td>
+        <td>@todo.Deadline.ToDisplayDate()</td>
         <td>@todo.TodoTypeId.Value</td>
       </tr>
     }
