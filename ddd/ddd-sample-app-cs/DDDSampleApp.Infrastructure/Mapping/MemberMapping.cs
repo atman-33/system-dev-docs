@@ -29,7 +29,7 @@ public static class MemberMapping
   {
     return new Member()
     {
-      Id = member.Id.ToString(),
+      Id = member.Id.Value,
       Name = member.Name,
       Position = member.Position.Value
     };

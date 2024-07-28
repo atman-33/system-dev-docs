@@ -10,12 +10,12 @@ public static class TodoMapping
   {
     return new Todo()
     {
-      Id = todo.Id.ToString(),
+      Id = todo.Id.Value,
       Content = todo.Content,
       Deadline = todo.Deadline,
       Status = todo.Status.Value,
-      MemberId = memberId.ToString(),
-      TodoTypeId = todo.TodoTypeId.ToString()
+      MemberId = memberId.Value,
+      TodoTypeId = todo.TodoTypeId.Value
     };
   }
 

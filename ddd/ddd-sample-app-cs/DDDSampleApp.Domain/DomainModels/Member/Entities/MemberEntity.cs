@@ -54,4 +54,9 @@ public class MemberEntity
   {
     Todos.Add(todo);
   }
+
+  public void RemoveTodo(TodoEntity todo)
+  {
+    Todos.Remove(todo);
+  }
 }

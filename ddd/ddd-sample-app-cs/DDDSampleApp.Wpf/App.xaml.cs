@@ -1,5 +1,4 @@
-﻿using System.Windows;
-using DDDSampleApp.Domain.DomainModels.Member.Repositories;
+﻿using DDDSampleApp.Domain.DomainModels.Member.Repositories;
 using DDDSampleApp.Domain.DomainModels.TodoType.Repositories;
 using DDDSampleApp.Infrastructure;
 using DDDSampleApp.Infrastructure.Data;
@@ -7,6 +6,7 @@ using DDDSampleApp.Infrastructure.Repositories;
 using DDDSampleApp.UseCase.Services.Member;
 using DDDSampleApp.UseCase.Services.TodoType;
 using Microsoft.Extensions.DependencyInjection;
+using System.Windows;
 
 namespace DDDSampleApp.Wpf;
 

@@ -9,6 +9,11 @@
 @using Microsoft.Extensions.DependencyInjection
 
 <div class="border-2 rounded-md p-4">
+  @if (errorMessage != string.Empty)
+  {
+    <p class="font-bold text-red-500">@errorMessage</p>
+  }
+
   <h3 class="font-bold">@member?.Position.Value: @member?.Name</h3>
   <form class="flex flex-col gap-4 py-2">
     <div class="flex gap-8 items-center">
@@ -20,7 +25,7 @@
       </div>
       <div>
         <label for="deadline" class="text-sm block">期限</label>
-        <input type="date" id="deadline" />
+        <input type="date" id="deadline" @bind="deadline" />
       </div>
     </div>
     <div>
@@ -28,10 +33,17 @@
         <label for="todo-types" class="text-sm block">タイプ</label>
         <select id="todo-types"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                @bind=selectedTodoTypeId>
-          @foreach(var todoType in todoTypes)
+          @onchange="(e) => HandleTodoTypeSelectChanged(e)">
+          @foreach (var todoType in todoTypes)
           {
-            <option value="@todoType.Id.Value" selected>@todoType.Name</option>
+            if (todoType.Id.Value == selectedTodoTypeId)
+            {
+                  <option value="@todoType.Id.Value" selected>@todoType.Name</option>
+            }
+            else
+            {
+                  <option value="@todoType.Id.Value">@todoType.Name</option>
+            }
           }
         </select>
       </div>
@@ -42,8 +54,7 @@
         @onclick="HandleAddTodoButtonClick">追加</button>
     </div>
 
-    <p>selectedTodoTypeId: @selectedTodoTypeId</p>
-    @* <p>todo: @todo</p> *@
+    <TodoList Todos="member?.Todos as List<TodoEntity>" />
 
   </form>
 </div>
@@ -59,6 +70,8 @@
   private List<TodoTypeEntity> todoTypes = new List<TodoTypeEntity>();
   private string selectedTodoTypeId = string.Empty;
 
+  private string errorMessage = string.Empty;
+
   protected override async Task OnInitializedAsync()
   {
     var memberGetUseCase = App.ServiceProvider.GetRequiredService<MemberGetUseCase>();
@@ -66,14 +79,34 @@
 
     var todoTypeGetUseCase = App.ServiceProvider.GetRequiredService<TodoTypeGetUseCase>();
     todoTypes = (List<TodoTypeEntity>)(await todoTypeGetUseCase.Execute());
-    // TODO: プライベートが初期値になるよう修正
     selectedTodoTypeId = todoTypes[0].Id.Value;
   }
 
-  private void HandleAddTodoButtonClick()
+  private void HandleTodoTypeSelectChanged(ChangeEventArgs e)
   {
-    // var newTodo = new TodoEntity(todoContent, deadline, todoTypeId)
-    var memberGetUseCase = App.ServiceProvider.GetRequiredService<MemberAddTodoUseCase>();
-    selectedTodoTypeId = "74419766-ad87-4baa-a35e-ae06298c3ed9";
+    if (e.Value is not null)
+    {
+      selectedTodoTypeId = e.Value.ToString() ?? string.Empty;
+    }
+  }
+
+  private async void HandleAddTodoButtonClick()
+  {
+    if (member is null)
+    {
+      throw new Exception("メンバーが設定されてません！");
+    }
+
+    try
+    {
+      var newTodo = new TodoEntity(todoContent, deadline, new TodoTypeId(selectedTodoTypeId));
+      var memberGetUseCase = App.ServiceProvider.GetRequiredService<MemberAddTodoUseCase>();
+      await memberGetUseCase.ExecuteAsync(member, newTodo);
+
+    }
+    catch (Exception e)
+    {
+      errorMessage = e.Message;
+    }
   }
 }

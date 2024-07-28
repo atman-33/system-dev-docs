@@ -32,7 +32,7 @@ public class MemberRepository : IMemberRepository
 
   public async Task UpdateAsync(MemberEntity updatedMember)
   {
-    var existingMember = await _dbContext.Members.FindAsync(updatedMember.Id.ToString());
+    var existingMember = await _dbContext.Members.FindAsync(updatedMember.Id.Value);
 
     if (existingMember == null)
     {

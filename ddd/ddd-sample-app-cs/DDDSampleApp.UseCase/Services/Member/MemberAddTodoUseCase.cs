@@ -13,9 +13,19 @@ public class MemberAddTodoUseCase
     _memberRepository = memberRepository;
   }
 
-  public void Execute(MemberEntity member, TodoEntity todo)
+  public async Task ExecuteAsync(MemberEntity member, TodoEntity todo)
   {
     member.AddTodo(todo);
-    _memberRepository.UpdateAsync(member);
+    try
+    {
+      await _memberRepository.UpdateAsync(member);
+    }
+    catch (Exception e)
+    {
+      {
+        member.RemoveTodo(todo);
+        throw new Exception(e.Message, e);
+      }
+    }
   }
 }

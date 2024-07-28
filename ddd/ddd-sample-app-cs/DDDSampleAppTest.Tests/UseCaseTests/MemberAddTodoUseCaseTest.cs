@@ -23,7 +23,7 @@ public class MemberAddTodoUseCaseTest
     var memberRepositoryMock = new Mock<IMemberRepository>();
 
     var useCase = new MemberAddTodoUseCase(memberRepositoryMock.Object);
-    useCase.Execute(member, todo);
+    useCase.ExecuteAsync(member, todo);
 
     Assert.AreEqual(1, member.Todos.Count);
   }

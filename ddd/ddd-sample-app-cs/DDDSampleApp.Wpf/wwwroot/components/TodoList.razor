@@ -1,0 +1,27 @@
+﻿@using DDDSampleApp.Domain.Features.Todo.Entities;
+
+<table class="table-auto">
+  <thead>
+    <tr>
+      <th>Todo</th>
+      <th>期限</th>
+      <th>タイプ</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var todo in Todos)
+    {
+      <tr>
+        <td>@todo.Content</td>
+        <td>@todo.Deadline.ToString()</td>
+        <td>@todo.TodoTypeId.Value</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+@code {
+  [Parameter]
+  public List<TodoEntity> Todos { get; set; } = new List<TodoEntity>();
+
+}
