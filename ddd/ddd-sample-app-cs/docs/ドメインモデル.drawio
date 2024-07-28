@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="qSRQhQrTSAJJsUl3RG-m" name="ドメインモデル">
-        <mxGraphModel dx="1260" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="864" dy="577" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -496,8 +496,8 @@
             </root>
         </mxGraphModel>
     </diagram>
-    <diagram id="tVj9b-WnGPSYWbFo9F1f" name="画面イメージ">
-        <mxGraphModel dx="1260" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <diagram id="tVj9b-WnGPSYWbFo9F1f" name="画面">
+        <mxGraphModel dx="1234" dy="824" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -616,6 +616,103 @@
                             <mxPoint x="690" y="240"/>
                         </Array>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-16" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="fxFA9M8uCJolFA8AC4wl-1" target="YCH95fIz1_9WrDPlLzbM-19">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="831.76" y="627.6599999999999" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-26" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="fxFA9M8uCJolFA8AC4wl-1" target="YCH95fIz1_9WrDPlLzbM-20">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-31" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="fxFA9M8uCJolFA8AC4wl-1" target="YCH95fIz1_9WrDPlLzbM-21">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-38" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="fxFA9M8uCJolFA8AC4wl-1" target="YCH95fIz1_9WrDPlLzbM-22">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="fxFA9M8uCJolFA8AC4wl-1" value="Todo画面&lt;br&gt;&lt;br&gt;表示&lt;br&gt;・ポジション&lt;br&gt;・メンバー名&lt;br&gt;&lt;br&gt;入力&lt;br&gt;・Todo内容&lt;br&gt;・期限&lt;br&gt;・Todoタイプ&lt;br&gt;&lt;br&gt;操作&lt;br&gt;・Todo追加ボタン&lt;br&gt;・Todoステータス変更チェックボックス&lt;br&gt;・Todo削除ボタン&lt;br&gt;・Todo依頼ボタン" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="600" width="240" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-2" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.966;exitY=0.512;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=classic;endFill=1;curved=1;" edge="1" parent="1" source="YCH95fIz1_9WrDPlLzbM-18" target="kp452B9yatlc5jmlzGpU-3">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="208.26999999999998" y="729.3399999999999" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-3" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="kp452B9yatlc5jmlzGpU-3" target="fxFA9M8uCJolFA8AC4wl-1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="kp452B9yatlc5jmlzGpU-3" value="初期処理を行う。" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="700" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-1" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=classic;endFill=1;curved=1;" edge="1" parent="1" source="kp452B9yatlc5jmlzGpU-4" target="kp452B9yatlc5jmlzGpU-3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="kp452B9yatlc5jmlzGpU-4" value="メンバー&lt;br&gt;Todo&lt;br&gt;Todoタイプ" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                    <mxGeometry x="317" y="820" width="76" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-34" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="YCH95fIz1_9WrDPlLzbM-8" target="YCH95fIz1_9WrDPlLzbM-12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-8" value="Todoを追加する。" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1040" y="562.5" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-35" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="YCH95fIz1_9WrDPlLzbM-9" target="YCH95fIz1_9WrDPlLzbM-13">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-9" value="Todoのステータスを変更する。" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1040" y="770" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-36" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="YCH95fIz1_9WrDPlLzbM-10" target="YCH95fIz1_9WrDPlLzbM-14">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-10" value="Todoを削除する。" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1040" y="950" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-37" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="YCH95fIz1_9WrDPlLzbM-11" target="YCH95fIz1_9WrDPlLzbM-15">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-11" value="Todoを別のメンバーに渡す。" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1040" y="1140" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-12" value="Todo" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                    <mxGeometry x="1067" y="660" width="76" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-13" value="Todo" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                    <mxGeometry x="1067" y="850" width="76" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-14" value="Todo" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                    <mxGeometry x="1067" y="1030" width="76" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-15" value="Todo" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                    <mxGeometry x="1067" y="1230" width="76" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-18" value="アプリ起動" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=mxgraph.basic.6_point_star;fillColor=#ffff88;strokeColor=#36393d;labelPosition=center;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="700" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-24" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="YCH95fIz1_9WrDPlLzbM-19" target="YCH95fIz1_9WrDPlLzbM-8">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-19" value="Todo追加ボタン&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;をクリック" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=mxgraph.basic.6_point_star;fillColor=#ffff88;strokeColor=#36393d;labelPosition=center;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="560" width="160" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-27" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="YCH95fIz1_9WrDPlLzbM-20" target="YCH95fIz1_9WrDPlLzbM-9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-20" value="&lt;span style=&quot;border-color: var(--border-color); text-align: left;&quot;&gt;Todoステータス変更チェックボックス&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;をクリック" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=mxgraph.basic.6_point_star;fillColor=#ffff88;strokeColor=#36393d;labelPosition=center;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="770" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-32" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="YCH95fIz1_9WrDPlLzbM-21" target="YCH95fIz1_9WrDPlLzbM-10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-21" value="&lt;span style=&quot;border-color: var(--border-color); text-align: left;&quot;&gt;Todo削除ボタン&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;をクリック" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=mxgraph.basic.6_point_star;fillColor=#ffff88;strokeColor=#36393d;labelPosition=center;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="827" y="950" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-39" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="YCH95fIz1_9WrDPlLzbM-22" target="YCH95fIz1_9WrDPlLzbM-11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="YCH95fIz1_9WrDPlLzbM-22" value="&lt;span style=&quot;border-color: var(--border-color); text-align: left;&quot;&gt;Todo依頼ボタン&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;をクリック" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=mxgraph.basic.6_point_star;fillColor=#ffff88;strokeColor=#36393d;labelPosition=center;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="820" y="1140" width="160" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
