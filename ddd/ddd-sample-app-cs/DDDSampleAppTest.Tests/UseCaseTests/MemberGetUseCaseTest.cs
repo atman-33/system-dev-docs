@@ -8,23 +8,27 @@ using Moq;
 namespace DDDSampleAppTest.Tests.UseCaseTests;
 
 [TestClass]
-public class MemberAddTodoUseCaseTest
+public class MemberGetUseCaseTest
 {
   [TestMethod]
-  public async Task Todoを追加するAsync()
+  public async Task メンバーを取得する()
   {
-    var todo = new TodoEntity("タスク", null, new TodoTypeId());
     var member = MemberEntity.Reconstruct(
       new MemberId(),
       "山田太郎",
       Position.Leader,
       new List<TodoEntity>());
 
+    // mock
     var memberRepositoryMock = new Mock<IMemberRepository>();
 
-    var useCase = new MemberAddTodoUseCase(memberRepositoryMock.Object);
-    await useCase.ExecuteAsync(member, todo);
+    memberRepositoryMock
+      .Setup(x => x.FetchByPositionAsync(Position.Leader))
+      .ReturnsAsync(member);
 
-    Assert.AreEqual(1, member.Todos.Count);
+    var useCase = new MemberGetUseCase(memberRepositoryMock.Object);
+    var result = await useCase.ExecuteAsync(Position.Leader);
+
+    Assert.AreEqual(member, result);
   }
 }

@@ -14,11 +14,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.7" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DataSource\QueryServices\" />
-    <Folder Include="DataSource\Repositories\" />
-  </ItemGroup>
-
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

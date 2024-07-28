@@ -24,4 +24,14 @@ public static class MemberMapping
         )).ToList()
     );
   }
+
+  public static Member ToModel(this MemberEntity member)
+  {
+    return new Member()
+    {
+      Id = member.Id.Value,
+      Name = member.Name,
+      Position = member.Position.Value
+    };
+  }
 }

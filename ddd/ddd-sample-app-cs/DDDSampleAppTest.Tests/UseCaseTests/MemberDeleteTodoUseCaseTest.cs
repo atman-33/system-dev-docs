@@ -8,23 +8,38 @@ using Moq;
 namespace DDDSampleAppTest.Tests.UseCaseTests;
 
 [TestClass]
-public class MemberAddTodoUseCaseTest
+public class MemberDeleteTodoUseCaseTest
 {
   [TestMethod]
-  public async Task Todoを追加するAsync()
+  public async Task Todoを削除するAsync()
   {
+    // ダミー作成
     var todo = new TodoEntity("タスク", null, new TodoTypeId());
+    var todoList = new List<TodoEntity>()
+    {
+      todo,
+      new TodoEntity("タスク2", null, new TodoTypeId()),
+      new TodoEntity("タスク3", null, new TodoTypeId()),
+    };
+
     var member = MemberEntity.Reconstruct(
       new MemberId(),
       "山田太郎",
       Position.Leader,
-      new List<TodoEntity>());
+      todoList);
 
+    Assert.AreEqual(3, member.Todos.Count);
+
+    // mock作成
     var memberRepositoryMock = new Mock<IMemberRepository>();
 
-    var useCase = new MemberAddTodoUseCase(memberRepositoryMock.Object);
+    // UseCase作成
+    var useCase = new MemberDeleteTodoUseCase(memberRepositoryMock.Object);
+
+    // Todoを削除
     await useCase.ExecuteAsync(member, todo);
 
-    Assert.AreEqual(1, member.Todos.Count);
+    // 数が減ったか確認
+    Assert.AreEqual(2, member.Todos.Count);
   }
 }

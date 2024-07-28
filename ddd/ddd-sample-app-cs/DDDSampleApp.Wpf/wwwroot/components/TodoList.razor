@@ -1,0 +1,49 @@
+﻿@using DDDSampleApp.Domain.DomainModels.TodoType.Entities
+@using DDDSampleApp.Domain.Features.Member.Entities
+@using DDDSampleApp.Domain.Features.Todo.Entities;
+@using DDDSampleApp.UseCase
+@using DDDSampleApp.Wpf.Utils;
+@using DDDSampleApp.UseCase.Services.Member
+@using Microsoft.Extensions.DependencyInjection
+
+<table class="table-auto">
+@*   <thead>
+    <tr>
+      <th>Todo</th>
+      <th>期限</th>
+      <th>タイプ</th>
+    </tr>
+  </thead>
+ *@  <tbody>
+    @foreach (var todo in Todos)
+    {
+      <tr>
+        <td class="py-2">@todo.Content</td>
+        <td class="py-2">@todo.DeadLine.ToDisplayDate()</td>
+        <td class="py-2">@todo.TodoTypeName</td>
+        <td class="py-2">
+            <button class="text-lg" @onclick="() => HandleDeleteTodoButtonClick(todo)">
+            🗑️
+            </button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+@code {
+  [Parameter]
+  public required MemberEntity Member { get; set; }
+  [Parameter]
+  public List<TodoDto> Todos { get; set; } = new List<TodoDto>();
+
+  protected override void OnInitialized()
+  {
+  }
+
+  private async void HandleDeleteTodoButtonClick(TodoDto todo)
+  {
+    var memberDeleteTodoUseCase = App.ServiceProvider.GetRequiredService<MemberDeleteTodoUseCase>();
+    await memberDeleteTodoUseCase.ExecuteAsync(Member, todo.TodoEntity);    
+  }
+}

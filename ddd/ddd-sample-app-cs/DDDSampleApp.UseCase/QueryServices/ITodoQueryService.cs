@@ -1,11 +1,11 @@
-﻿using DDDSampleApp.Domain.Features.Member.Entities;
+﻿using DDDSampleApp.Domain.ValueObjects;
 
 namespace DDDSampleApp.UseCase.QueryServices;
 
-public interface IMemberQueryService
+public interface ITodoQueryService
 {
   // メンバー情報取得は、エンティティの集約単位と異なるためクエリサービスで対応（CQRSパターン）
 
-  public Task<IList<MemberEntity>> FetchAllAsync();
+  public Task DeleteAsync(TodoId todoId);
 }
 

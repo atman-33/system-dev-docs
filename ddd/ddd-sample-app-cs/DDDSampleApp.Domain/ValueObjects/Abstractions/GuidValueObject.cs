@@ -24,8 +24,4 @@ public abstract record class GuidValueObject
     }
     Value = value;
   }
-
-  public override string ToString() => Value;
-
-  public static implicit operator string(GuidValueObject guidValueObject) => guidValueObject.Value;
 }

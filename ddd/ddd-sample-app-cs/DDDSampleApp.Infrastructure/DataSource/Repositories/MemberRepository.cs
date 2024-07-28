@@ -2,6 +2,7 @@
 using DDDSampleApp.Domain.Features.Member.Entities;
 using DDDSampleApp.Domain.ValueObjects;
 using DDDSampleApp.Infrastructure.Data;
+using DDDSampleApp.Infrastructure.Mapping;
 using Microsoft.EntityFrameworkCore;
 
 namespace DDDSampleApp.Infrastructure.Repositories;
@@ -15,7 +16,7 @@ public class MemberRepository : IMemberRepository
     _dbContext = dbContext;
   }
 
-  public async Task<MemberEntity> FindByPositionAsync(Position position)
+  public async Task<MemberEntity> FetchByPositionAsync(Position position)
   {
     var member = await _dbContext.Members
       .Include(m => m.Todos)
@@ -29,8 +30,27 @@ public class MemberRepository : IMemberRepository
     return member.ToEntity();
   }
 
-  public Task UpdateAsync(MemberEntity member)
+  public async Task UpdateAsync(MemberEntity updatedMember)
   {
-    throw new NotImplementedException();
+    var existingMember = await _dbContext.Members.FindAsync(updatedMember.Id.Value);
+
+    if (existingMember == null)
+    {
+      throw new Exception($"Member not found. MemberId: {updatedMember.Id}");
+    }
+
+    // 1. メンバー情報を更新する。
+    _dbContext.Members.Entry(existingMember).CurrentValues.SetValues(updatedMember.ToModel());
+
+    // 2-1. 先にmemberに含まれるtodosを全て削除する。
+    await _dbContext.Todos.Where(t => t.MemberId == updatedMember.Id.Value).ExecuteDeleteAsync();
+
+    // 2.2 新しいtodosを全て追加する。
+    foreach (var todo in updatedMember.Todos)
+    {
+      _dbContext.Todos.Add(todo.ToModel(updatedMember.Id));
+    }
+
+    await _dbContext.SaveChangesAsync();  // Commit
   }
 }

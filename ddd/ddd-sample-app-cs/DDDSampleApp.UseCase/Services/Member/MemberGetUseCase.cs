@@ -6,15 +6,15 @@ namespace DDDSampleApp.UseCase.Services.Member;
 
 public class MemberGetUseCase
 {
-  private IMemberRepository _memberRepository;
+  private readonly IMemberRepository _memberRepository;
 
   public MemberGetUseCase(IMemberRepository memberRepository)
   {
     _memberRepository = memberRepository;
   }
 
-  public async Task<MemberEntity> Execute(Position position)
+  public async Task<MemberEntity> ExecuteAsync(Position position)
   {
-    return await _memberRepository.FindByPositionAsync(position);
+    return await _memberRepository.FetchByPositionAsync(position);
   }
 }
