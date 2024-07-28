@@ -13,7 +13,7 @@ public class MemberGetUseCase
     _memberRepository = memberRepository;
   }
 
-  public async Task<MemberEntity> Execute(Position position)
+  public async Task<MemberEntity> ExecuteAsync(Position position)
   {
     return await _memberRepository.FetchByPositionAsync(position);
   }

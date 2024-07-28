@@ -1,7 +1,9 @@
-﻿using DDDSampleApp.Domain.Features.Member.Entities;
+﻿using DDDSampleApp.Domain.ValueObjects;
 
 namespace DDDSampleApp.UseCase.Dtos;
 public record class MemberDto(
-    MemberEntity Member,
+    MemberId Id,
+    string Name,
+    Position Position,
     IList<TodoDto> Todos
     );

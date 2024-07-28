@@ -52,6 +52,11 @@ public class MemberEntity
   /// <param name="todo"></param>
   public void AddTodo(TodoEntity todo)
   {
+    if (todo.Content == string.Empty)
+    {
+      throw new InvalidTodoContentExecption("Todo.Contentに空白は設定できません!");
+    }
+
     Todos.Add(todo);
   }
 

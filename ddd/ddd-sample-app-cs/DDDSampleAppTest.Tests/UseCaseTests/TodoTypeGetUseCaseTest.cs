@@ -24,7 +24,7 @@ public class TodoTypeGetUseCaseTest
 
     var useCase = new TodoTypeGetUseCase(todoTypeRepositoryMock.Object);
 
-    IEnumerable<TodoTypeEntity> result = await useCase.Execute();
+    IEnumerable<TodoTypeEntity> result = await useCase.ExecuteAsync();
     Assert.AreEqual(2, result.Count());
     Assert.AreEqual("プライベート", result.ElementAt(0).Name);
   }

@@ -45,6 +45,7 @@ public partial class App : Application
     // 3. ユースケースを追加
     services.AddTransient<MemberGetUseCase>();
     services.AddTransient<MemberAddTodoUseCase>();
+    services.AddTransient<MemberDeleteTodoUseCase>();
     services.AddTransient<TodoTypeGetUseCase>();
   }
 }

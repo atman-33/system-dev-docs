@@ -33,7 +33,7 @@ public static class TodoMapping
     }
 
     return new TodoDto(
-      Todo: todo.ToEntity(),
+      TodoEntity: todo.ToEntity(),
       Content: todo.Content,
       DeadLine: todo.Deadline,
       TodoTypeName: todo.TodoType.Name

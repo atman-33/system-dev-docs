@@ -43,7 +43,7 @@ public class MemberRepository : IMemberRepository
     _dbContext.Members.Entry(existingMember).CurrentValues.SetValues(updatedMember.ToModel());
 
     // 2-1. 先にmemberに含まれるtodosを全て削除する。
-    await _dbContext.Todos.Where(t => t.MemberId == updatedMember.Id.ToString()).ExecuteDeleteAsync();
+    await _dbContext.Todos.Where(t => t.MemberId == updatedMember.Id.Value).ExecuteDeleteAsync();
 
     // 2.2 新しいtodosを全て追加する。
     foreach (var todo in updatedMember.Todos)

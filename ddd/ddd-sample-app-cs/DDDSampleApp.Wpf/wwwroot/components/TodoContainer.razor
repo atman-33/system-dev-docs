@@ -7,6 +7,7 @@
 @using DDDSampleApp.UseCase.Services.Member
 @using DDDSampleApp.UseCase.Services.TodoType
 @using Microsoft.Extensions.DependencyInjection
+@using DDDSampleApp.Wpf.Utils
 
 <div class="border-2 rounded-md p-4">
   @if (errorMessage != string.Empty)
@@ -54,7 +55,7 @@
         @onclick="HandleAddTodoButtonClick">追加</button>
     </div>
 
-    <TodoList Todos="member?.Todos as List<TodoEntity>" />
+    <TodoList Member="@member" Todos="@member?.Todos.Select(t => t.ToTodoDto(todoTypes)).ToList()" />
 
   </form>
 </div>
@@ -62,11 +63,11 @@
 
 @code {
   [Parameter]
-  public Position? Position { get; set; }
+  public required Position Position { get; set; }
 
   private MemberEntity? member;
   private string todoContent = string.Empty;
-  private DateTime deadline = DateTime.Now.Date;
+  private DateTime? deadline = null; // DateTime.Now.Date;
   private List<TodoTypeEntity> todoTypes = new List<TodoTypeEntity>();
   private string selectedTodoTypeId = string.Empty;
 
@@ -75,10 +76,10 @@
   protected override async Task OnInitializedAsync()
   {
     var memberGetUseCase = App.ServiceProvider.GetRequiredService<MemberGetUseCase>();
-    member = await memberGetUseCase.Execute(Position!);
+    member = await memberGetUseCase.ExecuteAsync(Position);
 
     var todoTypeGetUseCase = App.ServiceProvider.GetRequiredService<TodoTypeGetUseCase>();
-    todoTypes = (List<TodoTypeEntity>)(await todoTypeGetUseCase.Execute());
+    todoTypes = (List<TodoTypeEntity>)(await todoTypeGetUseCase.ExecuteAsync());
     selectedTodoTypeId = todoTypes[0].Id.Value;
   }
 

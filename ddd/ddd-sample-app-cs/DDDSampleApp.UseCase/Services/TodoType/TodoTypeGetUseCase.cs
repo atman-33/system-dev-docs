@@ -12,7 +12,7 @@ public class TodoTypeGetUseCase
     _todoTypeRepository = todoTypeRepository;
   }
 
-  public async Task<IList<TodoTypeEntity>> Execute()
+  public async Task<IList<TodoTypeEntity>> ExecuteAsync()
   {
     var todoTypes = await _todoTypeRepository.FetchAllAsync();
     return todoTypes.OrderBy(x => x.Name).ToList();

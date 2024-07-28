@@ -3,7 +3,7 @@
 namespace DDDSampleApp.UseCase;
 
 public record class TodoDto(
-  TodoEntity Todo,
+  TodoEntity TodoEntity,
   string Content,
   DateTime? DeadLine,
   string TodoTypeName

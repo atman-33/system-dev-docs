@@ -27,7 +27,7 @@ public class MemberGetUseCaseTest
       .ReturnsAsync(member);
 
     var useCase = new MemberGetUseCase(memberRepositoryMock.Object);
-    var result = await useCase.Execute(Position.Leader);
+    var result = await useCase.ExecuteAsync(Position.Leader);
 
     Assert.AreEqual(member, result);
   }
