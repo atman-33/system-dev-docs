@@ -7,9 +7,9 @@ namespace DDDSampleApp.Infrastructure.Mapping;
 
 public static class TodoMapping
 {
-  public static Todo ToModel(this TodoEntity todo, MemberId memberId)
+  public static TodoModel ToModel(this TodoEntity todo, MemberId memberId)
   {
-    return new Todo()
+    return new TodoModel()
     {
       Id = todo.Id.Value,
       Content = todo.Content,
@@ -20,12 +20,12 @@ public static class TodoMapping
     };
   }
 
-  public static TodoEntity ToEntity(this Todo todo)
+  public static TodoEntity ToEntity(this TodoModel todo)
   {
     return new TodoEntity(todo.Content, todo.Deadline, new TodoTypeId(todo.TodoTypeId));
   }
 
-  public static TodoDto ToDto(this Todo todo)
+  public static TodoDto ToDto(this TodoModel todo)
   {
     if (todo.TodoType is null)
     {

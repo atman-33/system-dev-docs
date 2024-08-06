@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace DDDSampleApp.Infrastructure.Models;
 
 [Table("todo_types")]
-public class TodoType : IHasTimestamps
+public class TodoTypeModel : IHasTimestamps
 {
   [Column("id")]
   public required string Id { get; set; }

@@ -7,9 +7,9 @@ namespace DDDSampleApp.Infrastructure.Data;
 public class ApplicationContext : DbContext
 {
   // NOTE: DBテーブルの定義
-  public DbSet<Member> Members { get; set; }
-  public DbSet<Todo> Todos { get; set; }
-  public DbSet<TodoType> TodoTypes { get; set; }
+  public DbSet<MemberModel> Members { get; set; }
+  public DbSet<TodoModel> Todos { get; set; }
+  public DbSet<TodoTypeModel> TodoTypes { get; set; }
 
   public ApplicationContext() : this(ApplicationContext.GetDefaultOptions())
   {
@@ -43,44 +43,44 @@ public class ApplicationContext : DbContext
   {
     // ---- Member ---- //
     // NOTE: PKの設定
-    modelBuilder.Entity<Member>()
+    modelBuilder.Entity<MemberModel>()
       .HasKey(m => m.Id);
 
     // NOTE: ユニーク制約の設定
-    modelBuilder.Entity<Member>()
+    modelBuilder.Entity<MemberModel>()
       .HasIndex(m => m.Position)
       .IsUnique();
 
     // ---- Todo ---- //
-    modelBuilder.Entity<Todo>()
+    modelBuilder.Entity<TodoModel>()
       .HasKey(t => t.Id);
 
     // NOTE: FKの設定
-    modelBuilder.Entity<Todo>()
+    modelBuilder.Entity<TodoModel>()
       .HasOne(t => t.Member)
       .WithMany(m => m.Todos)
       .HasForeignKey(t => t.MemberId);
 
-    modelBuilder.Entity<Todo>()
+    modelBuilder.Entity<TodoModel>()
       .HasOne(t => t.TodoType)
       .WithMany() // NOTE: ナビゲーションプロパティを持たない場合は引数を空にする
       .HasForeignKey(t => t.TodoTypeId);
 
     // ---- TodoType ---- //
-    modelBuilder.Entity<TodoType>()
+    modelBuilder.Entity<TodoTypeModel>()
       .HasKey(t => t.Id);
 
-    modelBuilder.Entity<TodoType>()
+    modelBuilder.Entity<TodoTypeModel>()
       .HasIndex(t => t.Name)
       .IsUnique();
 
     // NOTE: Seed data（初期データ生成）
-    modelBuilder.Entity<Member>().HasData(
+    modelBuilder.Entity<MemberModel>().HasData(
       new { Id = Guid.NewGuid().ToString(), Name = "Aさん", Position = "リーダー", CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now },
       new { Id = Guid.NewGuid().ToString(), Name = "Bさん", Position = "メンバー", CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now }
     );
 
-    modelBuilder.Entity<TodoType>().HasData(
+    modelBuilder.Entity<TodoTypeModel>().HasData(
       new { Id = Guid.NewGuid().ToString(), Name = "プライベート", CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now },
       new { Id = Guid.NewGuid().ToString(), Name = "仕事", CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now }
     );

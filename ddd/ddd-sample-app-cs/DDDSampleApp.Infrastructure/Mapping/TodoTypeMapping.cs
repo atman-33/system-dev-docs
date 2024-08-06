@@ -7,7 +7,7 @@ namespace DDDSampleApp.Infrastructure.Mapping;
 public static class TodoTypeMapping
 {
 
-  public static TodoTypeEntity ToEntity(this TodoType todoType)
+  public static TodoTypeEntity ToEntity(this TodoTypeModel todoType)
   {
     return new TodoTypeEntity(new TodoTypeId(todoType.Id), todoType.Name);
   }
