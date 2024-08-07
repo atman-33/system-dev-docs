@@ -1,21 +1,20 @@
-﻿using DDDSampleApp.Domain.Features.Member.Entities;
-using DDDSampleApp.Domain.Features.Todo.Entities;
+﻿using DDDSampleApp.Domain.Models.Member;
 using DDDSampleApp.Domain.ValueObjects;
-using DDDSampleApp.Infrastructure.Models;
+using DDDSampleApp.Infrastructure.Entities;
 
 namespace DDDSampleApp.Infrastructure;
 
 public static class MemberMapping
 {
 
-  public static MemberEntity ToEntity(this MemberModel member)
+  public static MemberDomain ToDomain(this MemberEntity member)
   {
-    return MemberEntity.Reconstruct(
+    return MemberDomain.Reconstruct(
       new MemberId(member.Id),
       member.Name,
       new Position(member.Position),
       member.Todos
-        .Select(t => TodoEntity.Reconstruct(
+        .Select(t => TodoDomain.Reconstruct(
           new TodoId(t.Id),
           t.Content,
           t.Deadline,
@@ -25,9 +24,9 @@ public static class MemberMapping
     );
   }
 
-  public static MemberModel ToModel(this MemberEntity member)
+  public static MemberEntity ToEntity(this MemberDomain member)
   {
-    return new MemberModel()
+    return new MemberEntity()
     {
       Id = member.Id.Value,
       Name = member.Name,

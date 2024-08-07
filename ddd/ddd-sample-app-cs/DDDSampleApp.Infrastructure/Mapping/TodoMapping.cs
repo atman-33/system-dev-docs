@@ -1,15 +1,15 @@
-﻿using DDDSampleApp.Domain.Features.Todo.Entities;
+﻿using DDDSampleApp.Domain.Models.Member;
 using DDDSampleApp.Domain.ValueObjects;
-using DDDSampleApp.Infrastructure.Models;
+using DDDSampleApp.Infrastructure.Entities;
 using DDDSampleApp.UseCase;
 
 namespace DDDSampleApp.Infrastructure.Mapping;
 
 public static class TodoMapping
 {
-  public static TodoModel ToModel(this TodoEntity todo, MemberId memberId)
+  public static TodoEntity ToEntity(this TodoDomain todo, MemberId memberId)
   {
-    return new TodoModel()
+    return new TodoEntity()
     {
       Id = todo.Id.Value,
       Content = todo.Content,
@@ -20,12 +20,17 @@ public static class TodoMapping
     };
   }
 
-  public static TodoEntity ToEntity(this TodoModel todo)
+  public static TodoDomain ToDomain(this TodoEntity todo)
   {
-    return new TodoEntity(todo.Content, todo.Deadline, new TodoTypeId(todo.TodoTypeId));
+    return TodoDomain.Reconstruct(
+      new TodoId(todo.Id),
+      todo.Content,
+      todo.Deadline,
+      new Status(todo.Status),
+      new TodoTypeId(todo.TodoTypeId));
   }
 
-  public static TodoDto ToDto(this TodoModel todo)
+  public static TodoDto ToDto(this TodoEntity todo)
   {
     if (todo.TodoType is null)
     {
@@ -33,7 +38,7 @@ public static class TodoMapping
     }
 
     return new TodoDto(
-      TodoEntity: todo.ToEntity(),
+      TodoDomain: todo.ToDomain(),
       Content: todo.Content,
       DeadLine: todo.Deadline,
       TodoTypeName: todo.TodoType.Name

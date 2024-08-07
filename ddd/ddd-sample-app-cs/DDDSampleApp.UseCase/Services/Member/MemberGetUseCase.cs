@@ -1,5 +1,4 @@
-﻿using DDDSampleApp.Domain.DomainModels.Member.Repositories;
-using DDDSampleApp.Domain.Features.Member.Entities;
+﻿using DDDSampleApp.Domain.Models.Member;
 using DDDSampleApp.Domain.ValueObjects;
 
 namespace DDDSampleApp.UseCase.Services.Member;
@@ -13,7 +12,7 @@ public class MemberGetUseCase
     _memberRepository = memberRepository;
   }
 
-  public async Task<MemberEntity> ExecuteAsync(Position position)
+  public async Task<MemberDomain> ExecuteAsync(Position position)
   {
     return await _memberRepository.FetchByPositionAsync(position);
   }

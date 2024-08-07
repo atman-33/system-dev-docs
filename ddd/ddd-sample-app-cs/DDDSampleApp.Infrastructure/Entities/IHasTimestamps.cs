@@ -1,4 +1,4 @@
-﻿namespace DDDSampleApp.Infrastructure;
+﻿namespace DDDSampleApp.Infrastructure.Entities;
 
 internal interface IHasTimestamps
 {

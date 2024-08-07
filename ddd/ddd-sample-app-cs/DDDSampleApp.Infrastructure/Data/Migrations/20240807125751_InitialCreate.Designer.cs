@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DDDSampleApp.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20240727110657_InitialCreate")]
+    [Migration("20240807125751_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -24,7 +24,7 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
                 .HasAnnotation("Proxies:CheckEquality", false)
                 .HasAnnotation("Proxies:LazyLoading", true);
 
-            modelBuilder.Entity("DDDSampleApp.Infrastructure.Models.Member", b =>
+            modelBuilder.Entity("DDDSampleApp.Infrastructure.Entities.MemberEntity", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("TEXT")
@@ -58,23 +58,23 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7531c3df-bfb3-42d1-8eed-5667c890fe44",
-                            CreatedAt = new DateTime(2024, 7, 27, 20, 6, 56, 887, DateTimeKind.Local).AddTicks(2376),
+                            Id = "90f77859-d713-46d9-9a82-8bb21bd66256",
+                            CreatedAt = new DateTime(2024, 8, 7, 21, 57, 51, 86, DateTimeKind.Local).AddTicks(3417),
                             Name = "Aさん",
                             Position = "リーダー",
-                            UpdatedAt = new DateTime(2024, 7, 27, 20, 6, 56, 887, DateTimeKind.Local).AddTicks(2387)
+                            UpdatedAt = new DateTime(2024, 8, 7, 21, 57, 51, 86, DateTimeKind.Local).AddTicks(3431)
                         },
                         new
                         {
-                            Id = "77cebb4f-a8dd-421c-8a08-11eddfefae3f",
-                            CreatedAt = new DateTime(2024, 7, 27, 20, 6, 56, 887, DateTimeKind.Local).AddTicks(2392),
+                            Id = "a11711e1-c2f1-41e9-a0d3-cc76464ff77d",
+                            CreatedAt = new DateTime(2024, 8, 7, 21, 57, 51, 86, DateTimeKind.Local).AddTicks(3435),
                             Name = "Bさん",
                             Position = "メンバー",
-                            UpdatedAt = new DateTime(2024, 7, 27, 20, 6, 56, 887, DateTimeKind.Local).AddTicks(2392)
+                            UpdatedAt = new DateTime(2024, 8, 7, 21, 57, 51, 86, DateTimeKind.Local).AddTicks(3436)
                         });
                 });
 
-            modelBuilder.Entity("DDDSampleApp.Infrastructure.Models.Todo", b =>
+            modelBuilder.Entity("DDDSampleApp.Infrastructure.Entities.TodoEntity", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("TEXT")
@@ -120,7 +120,7 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
                     b.ToTable("todos");
                 });
 
-            modelBuilder.Entity("DDDSampleApp.Infrastructure.Models.TodoType", b =>
+            modelBuilder.Entity("DDDSampleApp.Infrastructure.Entities.TodoTypeEntity", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("TEXT")
@@ -149,29 +149,29 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "74419766-ad87-4baa-a35e-ae06298c3ed9",
-                            CreatedAt = new DateTime(2024, 7, 27, 20, 6, 56, 887, DateTimeKind.Local).AddTicks(2427),
+                            Id = "728014d6-96c1-4020-901e-61a541ea3967",
+                            CreatedAt = new DateTime(2024, 8, 7, 21, 57, 51, 86, DateTimeKind.Local).AddTicks(3481),
                             Name = "プライベート",
-                            UpdatedAt = new DateTime(2024, 7, 27, 20, 6, 56, 887, DateTimeKind.Local).AddTicks(2427)
+                            UpdatedAt = new DateTime(2024, 8, 7, 21, 57, 51, 86, DateTimeKind.Local).AddTicks(3481)
                         },
                         new
                         {
-                            Id = "f338175a-544b-4b01-91c1-da79539ad06c",
-                            CreatedAt = new DateTime(2024, 7, 27, 20, 6, 56, 887, DateTimeKind.Local).AddTicks(2442),
+                            Id = "78920b8b-ae53-44e5-8c99-d17dffe67790",
+                            CreatedAt = new DateTime(2024, 8, 7, 21, 57, 51, 86, DateTimeKind.Local).AddTicks(3484),
                             Name = "仕事",
-                            UpdatedAt = new DateTime(2024, 7, 27, 20, 6, 56, 887, DateTimeKind.Local).AddTicks(2442)
+                            UpdatedAt = new DateTime(2024, 8, 7, 21, 57, 51, 86, DateTimeKind.Local).AddTicks(3485)
                         });
                 });
 
-            modelBuilder.Entity("DDDSampleApp.Infrastructure.Models.Todo", b =>
+            modelBuilder.Entity("DDDSampleApp.Infrastructure.Entities.TodoEntity", b =>
                 {
-                    b.HasOne("DDDSampleApp.Infrastructure.Models.Member", "Member")
+                    b.HasOne("DDDSampleApp.Infrastructure.Entities.MemberEntity", "Member")
                         .WithMany("Todos")
                         .HasForeignKey("MemberId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DDDSampleApp.Infrastructure.Models.TodoType", "TodoType")
+                    b.HasOne("DDDSampleApp.Infrastructure.Entities.TodoTypeEntity", "TodoType")
                         .WithMany()
                         .HasForeignKey("TodoTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -182,7 +182,7 @@ namespace DDDSampleApp.Infrastructure.Data.Migrations
                     b.Navigation("TodoType");
                 });
 
-            modelBuilder.Entity("DDDSampleApp.Infrastructure.Models.Member", b =>
+            modelBuilder.Entity("DDDSampleApp.Infrastructure.Entities.MemberEntity", b =>
                 {
                     b.Navigation("Todos");
                 });

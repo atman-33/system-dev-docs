@@ -1,7 +1,7 @@
-﻿using DDDSampleApp.Domain.DomainModels.Member.Repositories;
-using DDDSampleApp.Domain.DomainModels.TodoType.Repositories;
-using DDDSampleApp.Infrastructure;
+﻿using DDDSampleApp.Domain.Models.Member;
+using DDDSampleApp.Domain.Models.TodoType;
 using DDDSampleApp.Infrastructure.Data;
+using DDDSampleApp.Infrastructure.EFCore;
 using DDDSampleApp.Infrastructure.Repositories;
 using DDDSampleApp.UseCase.Services.Member;
 using DDDSampleApp.UseCase.Services.TodoType;

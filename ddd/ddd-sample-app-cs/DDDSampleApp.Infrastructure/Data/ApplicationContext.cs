@@ -1,4 +1,4 @@
-﻿using DDDSampleApp.Infrastructure.Models;
+﻿using DDDSampleApp.Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
@@ -7,11 +7,11 @@ namespace DDDSampleApp.Infrastructure.Data;
 public class ApplicationContext : DbContext
 {
   // NOTE: DBテーブルの定義
-  public DbSet<MemberModel> Members { get; set; }
-  public DbSet<TodoModel> Todos { get; set; }
-  public DbSet<TodoTypeModel> TodoTypes { get; set; }
+  public DbSet<MemberEntity> Members { get; set; }
+  public DbSet<TodoEntity> Todos { get; set; }
+  public DbSet<TodoTypeEntity> TodoTypes { get; set; }
 
-  public ApplicationContext() : this(ApplicationContext.GetDefaultOptions())
+  public ApplicationContext() : this(GetDefaultOptions())
   {
   }
 
@@ -43,44 +43,44 @@ public class ApplicationContext : DbContext
   {
     // ---- Member ---- //
     // NOTE: PKの設定
-    modelBuilder.Entity<MemberModel>()
+    modelBuilder.Entity<MemberEntity>()
       .HasKey(m => m.Id);
 
     // NOTE: ユニーク制約の設定
-    modelBuilder.Entity<MemberModel>()
+    modelBuilder.Entity<MemberEntity>()
       .HasIndex(m => m.Position)
       .IsUnique();
 
     // ---- Todo ---- //
-    modelBuilder.Entity<TodoModel>()
+    modelBuilder.Entity<TodoEntity>()
       .HasKey(t => t.Id);
 
     // NOTE: FKの設定
-    modelBuilder.Entity<TodoModel>()
+    modelBuilder.Entity<TodoEntity>()
       .HasOne(t => t.Member)
       .WithMany(m => m.Todos)
       .HasForeignKey(t => t.MemberId);
 
-    modelBuilder.Entity<TodoModel>()
+    modelBuilder.Entity<TodoEntity>()
       .HasOne(t => t.TodoType)
       .WithMany() // NOTE: ナビゲーションプロパティを持たない場合は引数を空にする
       .HasForeignKey(t => t.TodoTypeId);
 
     // ---- TodoType ---- //
-    modelBuilder.Entity<TodoTypeModel>()
+    modelBuilder.Entity<TodoTypeEntity>()
       .HasKey(t => t.Id);
 
-    modelBuilder.Entity<TodoTypeModel>()
+    modelBuilder.Entity<TodoTypeEntity>()
       .HasIndex(t => t.Name)
       .IsUnique();
 
     // NOTE: Seed data（初期データ生成）
-    modelBuilder.Entity<MemberModel>().HasData(
+    modelBuilder.Entity<MemberEntity>().HasData(
       new { Id = Guid.NewGuid().ToString(), Name = "Aさん", Position = "リーダー", CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now },
       new { Id = Guid.NewGuid().ToString(), Name = "Bさん", Position = "メンバー", CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now }
     );
 
-    modelBuilder.Entity<TodoTypeModel>().HasData(
+    modelBuilder.Entity<TodoTypeEntity>().HasData(
       new { Id = Guid.NewGuid().ToString(), Name = "プライベート", CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now },
       new { Id = Guid.NewGuid().ToString(), Name = "仕事", CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now }
     );

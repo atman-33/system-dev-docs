@@ -1,10 +1,10 @@
 ﻿
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DDDSampleApp.Infrastructure.Models;
+namespace DDDSampleApp.Infrastructure.Entities;
 
 [Table("todo_types")]
-public class TodoTypeModel : IHasTimestamps
+public class TodoTypeEntity : IHasTimestamps
 {
   [Column("id")]
   public required string Id { get; set; }

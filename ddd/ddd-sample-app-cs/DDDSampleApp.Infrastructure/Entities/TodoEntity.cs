@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DDDSampleApp.Infrastructure.Models;
+namespace DDDSampleApp.Infrastructure.Entities;
 
 [Table("todos")]
-public class TodoModel : IHasTimestamps
+public class TodoEntity : IHasTimestamps
 {
   [Column("id")]
   public required string Id { get; set; }
@@ -34,8 +34,8 @@ public class TodoModel : IHasTimestamps
   遅延読み込み（Lazy Loading）や変更追跡プロキシ（Change Tracking Proxy）を使用する際に、
   ナビゲーションプロパティに virtual 修飾子を付ける必要がある。*/
   [ForeignKey(nameof(MemberId))]
-  public virtual MemberModel? Member { get; set; }
+  public virtual MemberEntity? Member { get; set; }
 
   [ForeignKey(nameof(TodoTypeId))]
-  public virtual TodoTypeModel? TodoType { get; set; }
+  public virtual TodoTypeEntity? TodoType { get; set; }
 }

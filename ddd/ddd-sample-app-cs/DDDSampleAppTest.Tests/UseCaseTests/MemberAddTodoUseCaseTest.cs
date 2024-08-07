@@ -1,6 +1,4 @@
-﻿using DDDSampleApp.Domain.DomainModels.Member.Repositories;
-using DDDSampleApp.Domain.Features.Member.Entities;
-using DDDSampleApp.Domain.Features.Todo.Entities;
+﻿using DDDSampleApp.Domain.Models.Member;
 using DDDSampleApp.Domain.ValueObjects;
 using DDDSampleApp.UseCase.Services.Member;
 using Moq;
@@ -13,12 +11,12 @@ public class MemberAddTodoUseCaseTest
   [TestMethod]
   public async Task Todoを追加するAsync()
   {
-    var todo = new TodoEntity("タスク", null, new TodoTypeId());
-    var member = MemberEntity.Reconstruct(
+    var todo = TodoDomain.Create("タスク", null, new TodoTypeId());
+    var member = MemberDomain.Reconstruct(
       new MemberId(),
       "山田太郎",
       Position.Leader,
-      new List<TodoEntity>());
+      new List<TodoDomain>());
 
     var memberRepositoryMock = new Mock<IMemberRepository>();
 

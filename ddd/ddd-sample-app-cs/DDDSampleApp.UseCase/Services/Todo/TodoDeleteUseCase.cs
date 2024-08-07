@@ -1,4 +1,4 @@
-﻿using DDDSampleApp.Domain.Features.Todo.Entities;
+﻿using DDDSampleApp.Domain.Models.Member;
 using DDDSampleApp.UseCase.QueryServices;
 
 namespace DDDSampleApp.UseCase.Services.Todo
@@ -12,7 +12,7 @@ namespace DDDSampleApp.UseCase.Services.Todo
       _todoQueryService = todoQueryService;
     }
 
-    public void Execute(TodoEntity todo)
+    public void Execute(TodoDomain todo)
     {
       throw new NotImplementedException();
     }

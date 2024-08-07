@@ -3,7 +3,7 @@ using DDDSampleApp.Infrastructure.Data;
 using DDDSampleApp.UseCase.QueryServices;
 using Microsoft.EntityFrameworkCore;
 
-namespace DDDSampleApp.Infrastructure.QueryServices;
+namespace DDDSampleApp.Infrastructure.EFCore;
 
 public class TodoQueryService : ITodoQueryService
 {

@@ -1,27 +1,26 @@
-﻿using DDDSampleApp.Domain.Features.Todo.Entities;
-using DDDSampleApp.Domain.ValueObjects;
+﻿using DDDSampleApp.Domain.ValueObjects;
 
-namespace DDDSampleApp.Domain.Features.Member.Entities;
+namespace DDDSampleApp.Domain.Models.Member;
 
-public class MemberEntity
+public class MemberDomain
 {
-  private MemberEntity(
+  private MemberDomain(
     MemberId id,
     string name,
     Position position,
-    IList<TodoEntity>? todos = null
+    IList<TodoDomain>? todos = null
   )
   {
     Id = id;
     Name = name;
     Position = position;
-    Todos = todos ?? new List<TodoEntity>();
+    Todos = todos ?? new List<TodoDomain>();
   }
 
   public MemberId Id { get; private set; }
   public string Name { get; set; }
   public Position Position { get; set; }
-  public IList<TodoEntity> Todos { get; private set; }
+  public IList<TodoDomain> Todos { get; private set; }
 
   /// <summary>
   /// メンバーを再構成する（DBから取得したデータなどから）。
@@ -30,11 +29,11 @@ public class MemberEntity
   /// <param name="name"></param>
   /// <param name="position"></param>
   /// <returns></returns>
-  public static MemberEntity Reconstruct(
+  public static MemberDomain Reconstruct(
     MemberId id,
     string name,
     Position position,
-    IList<TodoEntity> todos
+    IList<TodoDomain> todos
   )
   {
     if (!Position.CanCreate(position))
@@ -43,14 +42,14 @@ public class MemberEntity
       throw new InvalidPositionExecption($"Invalid position: {position}");
     }
 
-    return new MemberEntity(id, name, position, todos);
+    return new MemberDomain(id, name, position, todos);
   }
 
   /// <summary>
   /// Todoを追加する。
   /// </summary>
   /// <param name="todo"></param>
-  public void AddTodo(TodoEntity todo)
+  public void AddTodo(TodoDomain todo)
   {
     if (todo.Content == string.Empty)
     {
@@ -60,7 +59,7 @@ public class MemberEntity
     Todos.Add(todo);
   }
 
-  public void RemoveTodo(TodoEntity todo)
+  public void RemoveTodo(TodoDomain todo)
   {
     Todos.Remove(todo);
   }

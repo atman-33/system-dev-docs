@@ -1,9 +1,9 @@
-﻿using DDDSampleApp.Domain.Features.Todo.Entities;
+﻿using DDDSampleApp.Domain.Models.Member;
 
 namespace DDDSampleApp.UseCase;
 
 public record class TodoDto(
-  TodoEntity TodoEntity,
+  TodoDomain TodoDomain,
   string Content,
   DateTime? DeadLine,
   string TodoTypeName

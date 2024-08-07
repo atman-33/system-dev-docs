@@ -1,10 +1,10 @@
 ﻿using DDDSampleApp.Domain.ValueObjects;
 
-namespace DDDSampleApp.Domain.DomainModels.TodoType.Entities;
+namespace DDDSampleApp.Domain.Models.TodoType;
 
-public class TodoTypeEntity
+public class TodoTypeDomain
 {
-    public TodoTypeEntity(TodoTypeId id, string name)
+    public TodoTypeDomain(TodoTypeId id, string name)
     {
         Id = id;
         Name = name;

@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DDDSampleApp.Infrastructure.Models;
+namespace DDDSampleApp.Infrastructure.Entities;
 
 [Table("members")]
-public class MemberModel : IHasTimestamps
+public class MemberEntity : IHasTimestamps
 {
   [Column("id")]
   public required string Id { get; set; }
@@ -24,5 +24,5 @@ public class MemberModel : IHasTimestamps
   エンティティフレームワーク（Entity Framework）では、
   遅延読み込み（Lazy Loading）や変更追跡プロキシ（Change Tracking Proxy）を使用する際に、
   ナビゲーションプロパティに virtual 修飾子を付ける必要がある。*/
-  public virtual ICollection<TodoModel> Todos { get; set; } = new List<TodoModel>();
+  public virtual ICollection<TodoEntity> Todos { get; set; } = new List<TodoEntity>();
 }

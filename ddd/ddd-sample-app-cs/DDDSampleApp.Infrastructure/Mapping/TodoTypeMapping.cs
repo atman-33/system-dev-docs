@@ -1,14 +1,14 @@
-﻿using DDDSampleApp.Domain.DomainModels.TodoType.Entities;
+﻿using DDDSampleApp.Domain.Models.TodoType;
 using DDDSampleApp.Domain.ValueObjects;
-using DDDSampleApp.Infrastructure.Models;
+using DDDSampleApp.Infrastructure.Entities;
 
 namespace DDDSampleApp.Infrastructure.Mapping;
 
 public static class TodoTypeMapping
 {
 
-  public static TodoTypeEntity ToEntity(this TodoTypeModel todoType)
+  public static TodoTypeDomain ToDomain(this TodoTypeEntity todoType)
   {
-    return new TodoTypeEntity(new TodoTypeId(todoType.Id), todoType.Name);
+    return new TodoTypeDomain(new TodoTypeId(todoType.Id), todoType.Name);
   }
 }

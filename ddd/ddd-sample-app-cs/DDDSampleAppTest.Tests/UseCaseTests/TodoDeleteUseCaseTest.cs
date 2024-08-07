@@ -1,4 +1,4 @@
-﻿using DDDSampleApp.Domain.Features.Todo.Entities;
+﻿using DDDSampleApp.Domain.Models.Member;
 using DDDSampleApp.Domain.ValueObjects;
 using DDDSampleApp.UseCase.QueryServices;
 using DDDSampleApp.UseCase.Services.Todo;
@@ -13,7 +13,7 @@ namespace DDDSampleAppTest.Tests.UseCaseTests
     public void 不要_Todoを削除する()
     {
       // ダミーデータ作成
-      var todo = new TodoEntity("タスク", null, new TodoTypeId());
+      var todo = TodoDomain.Create("タスク", null, new TodoTypeId());
 
       // mock作成
       var todoQueryServiceMock = new Mock<ITodoQueryService>();

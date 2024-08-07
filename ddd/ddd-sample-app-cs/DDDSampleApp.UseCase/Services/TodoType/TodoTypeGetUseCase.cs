@@ -1,5 +1,4 @@
-﻿using DDDSampleApp.Domain.DomainModels.TodoType.Entities;
-using DDDSampleApp.Domain.DomainModels.TodoType.Repositories;
+﻿using DDDSampleApp.Domain.Models.TodoType;
 
 namespace DDDSampleApp.UseCase.Services.TodoType;
 
@@ -12,7 +11,7 @@ public class TodoTypeGetUseCase
     _todoTypeRepository = todoTypeRepository;
   }
 
-  public async Task<IList<TodoTypeEntity>> ExecuteAsync()
+  public async Task<IList<TodoTypeDomain>> ExecuteAsync()
   {
     var todoTypes = await _todoTypeRepository.FetchAllAsync();
     return todoTypes.OrderBy(x => x.Name).ToList();

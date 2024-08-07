@@ -1,6 +1,4 @@
-﻿using DDDSampleApp.Domain.DomainModels.Member.Repositories;
-using DDDSampleApp.Domain.Features.Member.Entities;
-using DDDSampleApp.Domain.Features.Todo.Entities;
+﻿using DDDSampleApp.Domain.Models.Member;
 using DDDSampleApp.Domain.ValueObjects;
 using DDDSampleApp.UseCase.Services.Member;
 using Moq;
@@ -13,11 +11,11 @@ public class MemberGetUseCaseTest
   [TestMethod]
   public async Task メンバーを取得する()
   {
-    var member = MemberEntity.Reconstruct(
+    var member = MemberDomain.Reconstruct(
       new MemberId(),
       "山田太郎",
       Position.Leader,
-      new List<TodoEntity>());
+      new List<TodoDomain>());
 
     // mock
     var memberRepositoryMock = new Mock<IMemberRepository>();

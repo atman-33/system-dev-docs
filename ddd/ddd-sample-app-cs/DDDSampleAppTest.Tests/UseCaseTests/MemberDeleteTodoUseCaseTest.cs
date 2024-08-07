@@ -1,6 +1,4 @@
-﻿using DDDSampleApp.Domain.DomainModels.Member.Repositories;
-using DDDSampleApp.Domain.Features.Member.Entities;
-using DDDSampleApp.Domain.Features.Todo.Entities;
+﻿using DDDSampleApp.Domain.Models.Member;
 using DDDSampleApp.Domain.ValueObjects;
 using DDDSampleApp.UseCase.Services.Member;
 using Moq;
@@ -14,15 +12,15 @@ public class MemberDeleteTodoUseCaseTest
   public async Task Todoを削除するAsync()
   {
     // ダミー作成
-    var todo = new TodoEntity("タスク", null, new TodoTypeId());
-    var todoList = new List<TodoEntity>()
+    var todo = TodoDomain.Create("タスク", null, new TodoTypeId());
+    var todoList = new List<TodoDomain>()
     {
       todo,
-      new TodoEntity("タスク2", null, new TodoTypeId()),
-      new TodoEntity("タスク3", null, new TodoTypeId()),
+      TodoDomain.Create("タスク2", null, new TodoTypeId()),
+      TodoDomain.Create("タスク3", null, new TodoTypeId()),
     };
 
-    var member = MemberEntity.Reconstruct(
+    var member = MemberDomain.Reconstruct(
       new MemberId(),
       "山田太郎",
       Position.Leader,

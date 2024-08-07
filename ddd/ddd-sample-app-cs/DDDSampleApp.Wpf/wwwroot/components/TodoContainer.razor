@@ -1,7 +1,6 @@
 ﻿@using System.Diagnostics
-@using DDDSampleApp.Domain.DomainModels.TodoType.Entities
-@using DDDSampleApp.Domain.Features.Member.Entities
-@using DDDSampleApp.Domain.Features.Todo.Entities
+@using DDDSampleApp.Domain.Models.Member
+@using DDDSampleApp.Domain.Models.TodoType
 @using DDDSampleApp.Domain.ValueObjects
 @using DDDSampleApp.Infrastructure.Repositories
 @using DDDSampleApp.UseCase.Services.Member
@@ -65,10 +64,10 @@
   [Parameter]
   public required Position Position { get; set; }
 
-  private MemberEntity? member;
+  private MemberDomain? member;
   private string todoContent = string.Empty;
   private DateTime? deadline = null; // DateTime.Now.Date;
-  private List<TodoTypeEntity> todoTypes = new List<TodoTypeEntity>();
+  private List<TodoTypeDomain> todoTypes = new List<TodoTypeDomain>();
   private string selectedTodoTypeId = string.Empty;
 
   private string errorMessage = string.Empty;
@@ -79,7 +78,7 @@
     member = await memberGetUseCase.ExecuteAsync(Position);
 
     var todoTypeGetUseCase = App.ServiceProvider.GetRequiredService<TodoTypeGetUseCase>();
-    todoTypes = (List<TodoTypeEntity>)(await todoTypeGetUseCase.ExecuteAsync());
+    todoTypes = (List<TodoTypeDomain>)(await todoTypeGetUseCase.ExecuteAsync());
     selectedTodoTypeId = todoTypes[0].Id.Value;
   }
 
@@ -100,7 +99,7 @@
 
     try
     {
-      var newTodo = new TodoEntity(todoContent, deadline, new TodoTypeId(selectedTodoTypeId));
+      var newTodo = TodoDomain.Create(todoContent, deadline, new TodoTypeId(selectedTodoTypeId));
       var memberGetUseCase = App.ServiceProvider.GetRequiredService<MemberAddTodoUseCase>();
       await memberGetUseCase.ExecuteAsync(member, newTodo);
 

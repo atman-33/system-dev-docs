@@ -1,6 +1,4 @@
-﻿@using DDDSampleApp.Domain.DomainModels.TodoType.Entities
-@using DDDSampleApp.Domain.Features.Member.Entities
-@using DDDSampleApp.Domain.Features.Todo.Entities;
+﻿@using DDDSampleApp.Domain.Models.Member
 @using DDDSampleApp.UseCase
 @using DDDSampleApp.Wpf.Utils;
 @using DDDSampleApp.UseCase.Services.Member
@@ -33,7 +31,7 @@
 
 @code {
   [Parameter]
-  public required MemberEntity Member { get; set; }
+  public required MemberDomain Member { get; set; }
   [Parameter]
   public List<TodoDto> Todos { get; set; } = new List<TodoDto>();
 
@@ -44,6 +42,6 @@
   private async void HandleDeleteTodoButtonClick(TodoDto todo)
   {
     var memberDeleteTodoUseCase = App.ServiceProvider.GetRequiredService<MemberDeleteTodoUseCase>();
-    await memberDeleteTodoUseCase.ExecuteAsync(Member, todo.TodoEntity);    
+    await memberDeleteTodoUseCase.ExecuteAsync(Member, todo.TodoDomain);    
   }
 }
